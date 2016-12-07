@@ -18,8 +18,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -43,24 +41,17 @@ public class Module implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 45)
-    @Column(name = "moduleID")
+    @Column(name = "moduleID", nullable = false, length = 45)
     private String moduleID;
-    @Size(max = 45)
-    @Column(name = "moduleName")
+    @Column(name = "moduleName", length = 45)
     private String moduleName;
-    @Size(max = 500)
-    @Column(name = "requirements")
+    @Column(name = "requirements", length = 500)
     private String requirements;
-    @Size(max = 500)
-    @Column(name = "description")
+    @Column(name = "description", length = 500)
     private String description;
-    @Size(max = 500)
-    @Column(name = "goals")
+    @Column(name = "goals", length = 500)
     private String goals;
-    @Size(max = 16)
-    @Column(name = "Deadline")
+    @Column(name = "Deadline", length = 16)
     private String deadline;
     @JoinColumn(name = "teacherID", referencedColumnName = "teacherID")
     @ManyToOne
@@ -164,4 +155,5 @@ public class Module implements Serializable {
     public String toString() {
         return "Database.Module[ moduleID=" + moduleID + " ]";
     }
+    
 }
