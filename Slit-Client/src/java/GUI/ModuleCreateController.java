@@ -65,12 +65,6 @@ public class ModuleCreateController implements Initializable {
         }
         
         if (this.ModuleIDText.getText() != null){
-  
-            module.addModule("10", "Module5", "MASSE TEKST REQUERMENTS",  "002", "MASSE TEKST DESCRIPTION", "MASSE TEKST GOALS", "2017-09-05");
-
-           //module.addModule((this.ModuleIDText.getText()), (this.ModuleNameText.getText()), (this.RequiermentsText.getText()), (this.TeacherIDText.getText()) ,(this.DescriptionText.getText()) , (this.GoalsText.getText()), (this.datePicker.getValue().toString()));
-            //module.addModule("11", "Module6", "MASSE TEKST REQUERMENTS",  "002", "MASSE TEKST DESCRIPTION", "MASSE TEKST GOALS", "2017-09-05");
-
            module.addModule(this.ModuleIDText.getText(), this.ModuleNameText.getText(), this.RequiermentsText.getText(), this.TeacherIDText.getText() ,this.DescriptionText.getText() , this.GoalsText.getText(), this.datePicker.getValue().toString());
            this.errorText.setText("Modul lagt til"); 
            }
