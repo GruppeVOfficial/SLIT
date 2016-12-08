@@ -30,7 +30,7 @@
       </Text>
       <Button fx:id="loggUt" layoutX="815.0" layoutY="26.0" mnemonicParsing="false" text="Logg ut" />
       <Button fx:id="redigerModuler" layoutX="646.0" layoutY="26.0" mnemonicParsing="false" text="Rediger moduler" />
-      <TableView layoutX="85.0" layoutY="144.0" prefHeight="429.0" prefWidth="749.0">
+      <TableView fx:id="tabel" layoutX="85.0" layoutY="144.0" prefHeight="429.0" prefWidth="749.0">
         <columns>
           <TableColumn fx:id="nameList" prefWidth="169.0" text="Navn" />
           <TableColumn fx:id="module1List" minWidth="0.0" prefWidth="79.0" text="Modul 1" />

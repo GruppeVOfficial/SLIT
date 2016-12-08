@@ -7,9 +7,7 @@ package GUI;
 
 import DataModel.StudentDataModel;
 import Framework.UserManager;
-import java.lang.reflect.Array;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,7 +15,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 
 /**
@@ -28,25 +28,11 @@ import javafx.scene.control.TableColumn;
 public class ListTeacherSideController implements Initializable {
 
     @FXML
-    private Label label;
-    @FXML
     private ChoiceBox<?> Sorter;
     @FXML
     private Button loggUt;
     @FXML
     private Button redigerModuler;
-    @FXML
-    private TableColumn<?, ?> nameList;
-    @FXML
-    private TableColumn<?, ?> module1List;
-    @FXML
-    private TableColumn<?, ?> module2List;
-    @FXML
-    private TableColumn<?, ?> module3List;
-    @FXML
-    private TableColumn<?, ?> module4List;
-    @FXML
-    private TableColumn<?, ?> module5List;
     @FXML
     private Button StudentListeBtn;
     @FXML
@@ -56,6 +42,22 @@ public class ListTeacherSideController implements Initializable {
     StudentDataModel student;
     @FXML
     private Label btnTestLabel;
+    @FXML
+    private ListView<?> listView;
+    @FXML
+    private TableView<?> table;
+    @FXML
+    private TableColumn<?, ?> nameList;
+    @FXML
+    private TableColumn<?, ?> modul1List;
+    @FXML
+    private TableColumn<?, ?> modul2List;
+    @FXML
+    private TableColumn<?, ?> modul3List;
+    @FXML
+    private TableColumn<?, ?> modul4List;
+    @FXML
+    private TableColumn<?, ?> modul5List;
 
 
     /**
@@ -68,22 +70,38 @@ public class ListTeacherSideController implements Initializable {
    
     @FXML
     private void showStudentList(ActionEvent event) {
-        if (btnTestLabel.getText() == null) {
+        setCurrentStudent("001");
         if(student.getUserid() >= 0){
-        student.getUserid();
-        } else {
+        } 
+        else {
             System.err.print("Cannot access the Module! Is the requested ID correct?");
             btnTestLabel.setText("No Module :(");
             
         }
+
+    }
+    private void getAllStudent(){
+        if(student.getUserid() != 0){   
         
-       
+        }
+    
+    }
+    
+    private void findStundents(){
+        setCurrentStudent("001");
+    if (student.getUserid("1") >= 0){
+        
+    }
+    }
+        void setCurrentStudent(String id) {
+        student = user.getStudent(id);
     }
 
         
 }
+    
 
-}
+
     
     
 
