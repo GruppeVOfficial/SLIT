@@ -9,6 +9,9 @@ import DataModel.StudentDataModel;
 import Framework.UserManager;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import static javafx.collections.FXCollections.observableList;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -44,20 +47,6 @@ public class ListTeacherSideController implements Initializable {
     private Label btnTestLabel;
     @FXML
     private ListView<?> listView;
-    @FXML
-    private TableView<?> table;
-    @FXML
-    private TableColumn<?, ?> nameList;
-    @FXML
-    private TableColumn<?, ?> modul1List;
-    @FXML
-    private TableColumn<?, ?> modul2List;
-    @FXML
-    private TableColumn<?, ?> modul3List;
-    @FXML
-    private TableColumn<?, ?> modul4List;
-    @FXML
-    private TableColumn<?, ?> modul5List;
 
 
     /**
@@ -70,35 +59,14 @@ public class ListTeacherSideController implements Initializable {
    
     @FXML
     private void showStudentList(ActionEvent event) {
-        setCurrentStudent("001");
-        if(student.getUserid() >= 0){
-        } 
-        else {
-            System.err.print("Cannot access the Module! Is the requested ID correct?");
-            btnTestLabel.setText("No Module :(");
-            
-        }
-
-    }
-    private void getAllStudent(){
-        if(student.getUserid() != 0){   
-        
-        }
-    
-    }
-    
-    private void findStundents(){
-        setCurrentStudent("001");
-    if (student.getUserid("1") >= 0){
-        
-    }
-    }
-        void setCurrentStudent(String id) {
-        student = user.getStudent(id);
+        FXCollections.observableList(user.getAllStudents());
+        listView.setItems(observableList);
     }
 
-        
 }
+
+
+      
     
 
 
