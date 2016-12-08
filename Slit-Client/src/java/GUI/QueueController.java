@@ -5,9 +5,18 @@
  */
 package GUI;
 
+import DataModel.StudentDataModel;
 import java.net.URL;
+import java.util.ArrayList;
+import static java.util.Collections.list;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 
 /**
  * FXML Controller class
@@ -16,6 +25,17 @@ import javafx.fxml.Initializable;
  */
 public class QueueController implements Initializable {
 
+    @FXML
+    private Button UpdateQueue;
+    @FXML
+    private Button addToQueue;
+    @FXML
+    private Button ExitQueue;
+    @FXML
+    private ListView<String> StudentKøListe;
+    
+    private StudentDataModel Student;
+    
     /**
      * Initializes the controller class.
      */
@@ -24,4 +44,14 @@ public class QueueController implements Initializable {
         // TODO
     }    
     
+    
+    //tror denne ble riktig
+    private void addToQueue(ActionEvent event)
+    {
+        ObservableList<String> items = FXCollections.observableArrayList (Student.firstName);
+        
+        StudentKøListe.setItems(items);
+    }
+    
+
 }

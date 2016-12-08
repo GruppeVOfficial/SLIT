@@ -6,9 +6,13 @@ package GUI;
  * and open the template in the editor.
  */
 
+import DataModel.StudentDataModel;
+import Framework.UserManager;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
+import Utils.Debug;
 
 /**
  * FXML Controller class
@@ -17,12 +21,18 @@ import javafx.fxml.Initializable;
  */
 public class RegisterUserController implements Initializable {
 
+    
+    UserManager users = new UserManager();
+    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
+        
+        
     }    
     
 }
