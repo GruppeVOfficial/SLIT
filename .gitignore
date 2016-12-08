@@ -8,6 +8,7 @@
 *.class
 
 *.class
+<<<<<<< HEAD
 
 *.jar
 
@@ -16,3 +17,5 @@
 *.MF
 
 *.xml
+=======
+>>>>>>> origin/developement

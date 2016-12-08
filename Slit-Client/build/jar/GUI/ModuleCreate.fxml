@@ -69,7 +69,7 @@
                         <Font size="19.0" />
                      </font>
                   </Label>
-                  <Button layoutX="326.0" layoutY="819.0" mnemonicParsing="false" onAction="#saveModulEvent" text="Lagre" />
+                  <Button fx:id="save" layoutX="326.0" layoutY="819.0" mnemonicParsing="false" onAction="#saveModulEvent" text="Lagre" />
                   <Button fx:id="AvbrytBtn" layoutX="418.0" layoutY="818.0" mnemonicParsing="false" text="Avbryt" />
                   <Label fx:id="errorText" layoutX="504.0" layoutY="42.0" prefHeight="46.0" prefWidth="288.0">
                      <font>

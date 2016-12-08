@@ -49,6 +49,8 @@ public class ModuleCreateController implements Initializable {
 
     @FXML
     private Label errorText;
+    @FXML
+    private Button save;
 
     /**
      * Initializes the controller class.
