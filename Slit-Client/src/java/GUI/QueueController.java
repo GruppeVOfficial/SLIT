@@ -9,7 +9,10 @@ import DataModel.StudentDataModel;
 import java.net.URL;
 import java.util.ArrayList;
 import static java.util.Collections.list;
+import java.util.List;
 import java.util.ResourceBundle;
+import javafx.beans.property.ListProperty;
+import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -36,22 +39,40 @@ public class QueueController implements Initializable {
     
     private StudentDataModel Student;
     
+    
+    protected List<String> StudentNavn = new ArrayList<>();
+    protected ListProperty<String> listProperty = new SimpleListProperty<>();
+    
+    private void StudentKøListe()
+    {
+        //ObservableList<String> items = FXCollections.observableArrayList (Student.firstName);
+        ObservableList<String> items = FXCollections.observableArrayList(StudentNavn);
+        
+        StudentKøListe.setItems(items);
+    }
+    
+    @FXML
+    private void actionQueue(ActionEvent event) {
+        listProperty.set(FXCollections.observableArrayList(StudentNavn));
+    }
+    
+    @FXML
+    private void Quexit(ActionEvent event) 
+    {
+        StudentNavn.remove("Erik");
+        listProperty.set(FXCollections.observableArrayList(StudentNavn));
+    }
+    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        StudentNavn.add("Erik");
+        StudentKøListe.itemsProperty().bind(listProperty);
     }    
+
     
-    
-    //tror denne ble riktig
-    private void addToQueue(ActionEvent event)
-    {
-        ObservableList<String> items = FXCollections.observableArrayList (Student.firstName);
-        
-        StudentKøListe.setItems(items);
-    }
-    
+       
 
 }

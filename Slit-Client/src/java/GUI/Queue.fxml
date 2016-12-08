@@ -15,8 +15,8 @@
          </font>
       </Label>
       <Button fx:id="UpdateQueue" layoutX="303.0" layoutY="12.0" mnemonicParsing="false" text="Oppdater " />
-      <Button fx:id="addToQueue" layoutX="128.0" layoutY="12.0" mnemonicParsing="false" text="Gå i kø" />
-      <Button fx:id="ExitQueue" layoutX="199.0" layoutY="12.0" mnemonicParsing="false" text="Ut av kø" />
+      <Button fx:id="addToQueue" layoutX="128.0" layoutY="12.0" mnemonicParsing="false" onAction="#actionQueue" text="Gå i kø" />
+      <Button fx:id="ExitQueue" layoutX="199.0" layoutY="12.0" mnemonicParsing="false" onAction="#Quexit" text="Ut av kø" />
       <ScrollPane layoutX="25.0" layoutY="53.0" prefHeight="433.0" prefWidth="347.0">
          <content>
             <ListView fx:id="StudentKøListe" prefHeight="743.0" prefWidth="345.0" />
