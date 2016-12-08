@@ -13,4 +13,8 @@ public class Debug {
     public static void Print(String output) {
         System.out.println(output);
     }
+    
+    public static void PrintError(String output) {
+        System.err.print(output);
+    }
 }

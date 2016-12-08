@@ -7,6 +7,7 @@ package GUI;
 
 import DataModel.ModuleDataModel;
 import Framework.ModuleManager;
+import Utils.Debug;
 import com.sun.prism.paint.Color;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -92,7 +93,7 @@ public class StudentSideModuleController implements Initializable {
             moduleText.setText(change);
             moduleTitle.setText(currentModule.getModuleName());
         } else {
-            System.err.print("Cannot access the Module! Is the requested ID correct?");
+            Debug.PrintError("Cannot access the Module! Is the requested ID correct?");
             moduleTitle.setText("No Module :(");
            
             moduleText.setText("Cannot fetch module information");

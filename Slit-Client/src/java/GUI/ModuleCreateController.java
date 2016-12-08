@@ -6,6 +6,7 @@
 package GUI;
 
 import Framework.ModuleManager;
+import Utils.Debug;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -69,7 +70,7 @@ public class ModuleCreateController implements Initializable {
            this.errorText.setText("Modul lagt til"); 
            }
         else{
-            System.out.println("Noe gikk galt");
+            Debug.PrintError("Noe gikk galt");
 
         }   
     }
