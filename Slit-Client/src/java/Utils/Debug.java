@@ -10,11 +10,24 @@ package Utils;
  * @author mathiashartveit1
  */
 public class Debug {
-    public static void Print(String output) {
+    /***
+     * Easier access to {@link System} print
+     * @param The object to be printed 
+     */
+    public static void Print(Object output) {
         System.out.println(output);
     }
     
-    public static void PrintError(String output) {
+    /***
+     * Easier access to {@link System} print error
+     * @param The object to be printed 
+     */
+    public static void PrintError(Object output) {
         System.err.print(output);
     }
+    
+    
+
+    
+    
 }

@@ -28,19 +28,10 @@
          </font>
       </Text>
       <Button fx:id="loggUt" layoutX="815.0" layoutY="26.0" mnemonicParsing="false" text="Logg ut" />
-      <Button fx:id="redigerModuler" layoutX="646.0" layoutY="26.0" mnemonicParsing="false" text="Rediger moduler" />
-      <Button fx:id="StudentListeBtn" layoutX="82.0" layoutY="72.0" mnemonicParsing="false" onAction="#showStudentList" text="StudentListe" />
+      <Button fx:id="redigerModuler" layoutX="646.0" layoutY="26.0" mnemonicParsing="false" onAction="#Ayy" text="Rediger moduler" />
+      <Button fx:id="StudentListeBtn" layoutX="82.0" layoutY="72.0" mnemonicParsing="false" onAction="#showStudentList" text="Oppdater" />
       <Button fx:id="queueBtn" layoutX="201.0" layoutY="72.0" mnemonicParsing="false" text="Kø" />
       <Label fx:id="btnTestLabel" layoutX="257.0" layoutY="77.0" prefHeight="17.0" prefWidth="196.0" />
-      <TableView fx:id="table" layoutX="82.0" layoutY="144.0" prefHeight="429.0" prefWidth="757.0">
-        <columns>
-          <TableColumn fx:id="nameList" prefWidth="129.0" text="Navn" />
-          <TableColumn fx:id="modul1List" minWidth="0.0" prefWidth="133.0" text="Modul1" />
-            <TableColumn fx:id="modul2List" minWidth="0.0" prefWidth="100.0" text="Modul2" />
-            <TableColumn fx:id="modul3List" minWidth="0.0" prefWidth="118.0" text="Modul3" />
-            <TableColumn fx:id="modul4List" minWidth="0.0" prefWidth="118.0" text="Modul4" />
-            <TableColumn fx:id="modul5List" minWidth="0.0" prefWidth="118.0" text="Modul5" />
-        </columns>
-      </TableView>
+      <ListView fx:id="listView" layoutX="90.0" layoutY="152.0" prefHeight="417.0" prefWidth="552.0" />
     </children>
 </AnchorPane>

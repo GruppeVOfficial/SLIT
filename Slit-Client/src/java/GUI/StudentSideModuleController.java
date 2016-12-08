@@ -8,6 +8,7 @@ package GUI;
 
 import DataModel.ModuleDataModel;
 import Framework.ModuleManager;
+import Utils.Debug;
 import Utils.Utilities;
 import com.sun.prism.paint.Color;
 import java.net.URL;
@@ -15,6 +16,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -59,19 +61,22 @@ public class StudentSideModuleController implements Initializable {
     
     @FXML
     private void module1btn(ActionEvent event) { 
-        setCurrentModule("1");
-        setCurrentModuleInfo();
+        module1btn.getScene().setCursor(Cursor.WAIT);
+        UpdateModule("1");
+        module1btn.getScene().setCursor(Cursor.DEFAULT);
     }
     
     @FXML
     private void module2btn(ActionEvent event) { 
-        setCurrentModule("020");
-        setCurrentModuleInfo();
+        module1btn.getScene().setCursor(Cursor.WAIT);
+        UpdateModule("020");
+        module1btn.getScene().setCursor(Cursor.DEFAULT);
     }
     
     
     void setCurrentModule(String moduleID) {
         currentModule = modules.getModel(moduleID);
+        
     }
     
     
@@ -87,7 +92,7 @@ public class StudentSideModuleController implements Initializable {
             moduleText.setText(change);
             moduleTitle.setText(currentModule.getModuleName());
         } else {
-            System.err.print("Cannot access the Module! Is the requested ID correct?");
+            Debug.PrintError("Cannot access the Module! Is the requested ID correct?");
             moduleTitle.setText("No Module :(");
            
             moduleText.setText("Cannot fetch module information");
@@ -95,6 +100,18 @@ public class StudentSideModuleController implements Initializable {
         }
         
 
+    }
+    
+    void UpdateModule(String id) {
+        try {
+            setCurrentModule(id);
+            setCurrentModuleInfo();
+       } catch (IllegalArgumentException e) {
+           e.printStackTrace();
+       }
+        
+       
+        
     }
 
     

@@ -5,12 +5,21 @@
  */
 package Utils;
 
+import GUI.Main;
+
+
 /**
  *
  * @author mathiashartveit1
  */
 public class Utilities {
     
+    /***
+     * Converts a string date of YYYY-MM-DD to
+     * DD-MM-YYYY
+     * @param date - The date to be converted
+     * @return The converted string
+     */
     public static String convertDate(String date) {
         // YYYY-MM-DD
         String year = date.substring(0, 4);
@@ -21,5 +30,7 @@ public class Utilities {
         
         return date;
     }
+    
+
     
 }
