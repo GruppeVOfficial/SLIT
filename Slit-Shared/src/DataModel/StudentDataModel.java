@@ -74,6 +74,10 @@ public class StudentDataModel implements java.io.Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public int getUserid(String userId) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     

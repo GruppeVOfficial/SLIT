@@ -68,8 +68,12 @@ public class UserManager {
     
     /**
      * TODO: THIS IS FUCKING GARBAGE! CONSIDER CONVERTING STUDENT ID TO INT IN DB
-     * @param i
-     * @return 
+     * 
+     * Converts an integer i into string with the format "00i"
+     * for accessing the database id correctly. Goes up to 3 integers ("999")
+     * 
+     * @param i Integer to be converted to correct string
+     * @return String with correct format for DB
      */
     String correctId(int i) {
         String s;
