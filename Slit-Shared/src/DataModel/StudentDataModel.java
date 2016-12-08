@@ -12,8 +12,8 @@ package DataModel;
 public class StudentDataModel implements java.io.Serializable {
     
     private int userid;
-    private String firstName;
-    private String lastName; 
+    public String firstName;
+    public String lastName; 
     private String email;
     private String phoneNumber; 
     private String username;

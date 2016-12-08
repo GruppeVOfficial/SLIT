@@ -15,11 +15,11 @@ import javafx.fxml.Initializable;
  *
  * @author Terje
  */
-public class ListeTeacherSideController implements Initializable {
-
+public class ListeTeacherSideController implements Initializable { 
+    
     /**
      * Initializes the controller class.
-     */
+     */ 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
