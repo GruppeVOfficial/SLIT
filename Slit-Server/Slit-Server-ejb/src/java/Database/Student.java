@@ -15,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -38,6 +39,9 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Student.findByUserName", query = "SELECT s FROM Student s WHERE s.userName = :userName"),
     @NamedQuery(name = "Student.findByUserPassword", query = "SELECT s FROM Student s WHERE s.userPassword = :userPassword")})
 public class Student implements Serializable {
+
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "student")
+    private Queue queue;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -163,6 +167,14 @@ public class Student implements Serializable {
     @Override
     public String toString() {
         return "Database.Student[ studentID=" + studentID + " ]";
+    }
+
+    public Queue getQueue() {
+        return queue;
+    }
+
+    public void setQueue(Queue queue) {
+        this.queue = queue;
     }
     
 }
