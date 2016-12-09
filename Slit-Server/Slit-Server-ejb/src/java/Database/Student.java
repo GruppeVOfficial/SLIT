@@ -15,7 +15,6 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -68,8 +67,6 @@ public class Student implements Serializable {
     private String userPassword;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "student")
     private List<Deliverable> deliverableList;
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "student")
-    private Queue queue;
 
     public Student() {
     }
@@ -141,14 +138,6 @@ public class Student implements Serializable {
 
     public void setDeliverableList(List<Deliverable> deliverableList) {
         this.deliverableList = deliverableList;
-    }
-
-    public Queue getQueue() {
-        return queue;
-    }
-
-    public void setQueue(Queue queue) {
-        this.queue = queue;
     }
 
     @Override
