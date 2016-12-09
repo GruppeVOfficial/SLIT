@@ -7,11 +7,9 @@ package GUI;
 
 import DataModel.StudentDataModel;
 import Framework.UserManager;
-import Utils.Debug;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.concurrent.TimeUnit;
 import javafx.collections.FXCollections;
 import static javafx.collections.FXCollections.observableList;
 import javafx.collections.ObservableList;
@@ -58,10 +56,7 @@ public class ListTeacherSideController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        
-   
-        
+        // TODO     
     }    
    
     @FXML
@@ -72,11 +67,7 @@ public class ListTeacherSideController implements Initializable {
     @FXML
     private void Ayy() {
        redigerModuler.getScene().setCursor(Cursor.WAIT);
-       
-       
-       
         redigerModuler.getScene().setCursor(Cursor.DEFAULT);
-
 
     }
 
@@ -84,8 +75,7 @@ public class ListTeacherSideController implements Initializable {
         StudentListeBtn.getScene().setCursor(Cursor.WAIT);
         ArrayList<StudentDataModel> students = new ArrayList();
         ObservableList<String> data = FXCollections.observableArrayList();
-        
-        
+
         try {
             students = user.getAllStudents();
             for (int i = 0; i < students.size(); i++) {
