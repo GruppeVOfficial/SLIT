@@ -22,16 +22,6 @@ import javafx.stage.Stage;
  */
 public class Utilities {
     
-    private static Utilities instance;
-
-    public Utilities() {
-        instance = this;
-    }
-
-    public static Utilities getInstance() {
-        return instance;
-    }
-    
     /***
      * Converts a string date of YYYY-MM-DD to
      * DD-MM-YYYY

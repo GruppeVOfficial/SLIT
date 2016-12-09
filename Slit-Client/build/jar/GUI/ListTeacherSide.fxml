@@ -28,10 +28,11 @@
          </font>
       </Text>
       <Button fx:id="loggUt" layoutX="815.0" layoutY="26.0" mnemonicParsing="false" text="Logg ut" />
-      <Button fx:id="redigerModuler" layoutX="646.0" layoutY="26.0" mnemonicParsing="false" onAction="#Ayy" text="Rediger moduler" />
+
+      <Button fx:id="redigerModuler" layoutX="646.0" layoutY="26.0" mnemonicParsing="false" onAction="#goToRedigerModuler" text="Rediger moduler" />
       <Button fx:id="StudentListeBtn" layoutX="82.0" layoutY="72.0" mnemonicParsing="false" onAction="#showStudentList" text="Oppdater" />
+
       <Button fx:id="queueBtn" layoutX="201.0" layoutY="72.0" mnemonicParsing="false" text="Kø" />
       <Label fx:id="btnTestLabel" layoutX="257.0" layoutY="77.0" prefHeight="17.0" prefWidth="196.0" />
-      <ListView fx:id="listView" layoutX="90.0" layoutY="152.0" prefHeight="417.0" prefWidth="552.0" />
     </children>
 </AnchorPane>

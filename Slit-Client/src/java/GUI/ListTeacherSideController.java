@@ -67,20 +67,18 @@ public class ListTeacherSideController implements Initializable {
     
     @FXML
     private void goToRedigerModuler(ActionEvent event) throws IOException {
-        //Stage current = (Stage)redigerModuler.getScene().getWindow();
-        //Utilities.changeScene(current, "Test", "GUI/ListTeacherSide");
-        
         Utilities.changeScene(event, this.getClass(), "ModuleCreate", "Kø");
     }
     
    
 
     void getStudentList() {
-        StudentListeBtn.getScene().setCursor(Cursor.WAIT);
+        
         ArrayList<StudentDataModel> students = new ArrayList();
         ObservableList<String> data = FXCollections.observableArrayList();
 
         try {
+            StudentListeBtn.getScene().setCursor(Cursor.WAIT);
             students = user.getAllStudents();
             for (int i = 0; i < students.size(); i++) {
                 data.add(students.get(i).firstName);
