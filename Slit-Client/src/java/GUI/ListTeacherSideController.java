@@ -13,16 +13,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.concurrent.TimeUnit;
 import javafx.collections.FXCollections;
-
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
-
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -61,10 +57,7 @@ public class ListTeacherSideController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        
-   
-        
+        // TODO     
     }    
    
     @FXML
@@ -78,8 +71,6 @@ public class ListTeacherSideController implements Initializable {
         //Utilities.changeScene(current, "Test", "GUI/ListTeacherSide");
         
         Utilities.changeScene(event, this.getClass(), "ModuleCreate", "Kø");
-        
-        
     }
     
    
@@ -88,8 +79,7 @@ public class ListTeacherSideController implements Initializable {
         StudentListeBtn.getScene().setCursor(Cursor.WAIT);
         ArrayList<StudentDataModel> students = new ArrayList();
         ObservableList<String> data = FXCollections.observableArrayList();
-        
-        
+
         try {
             students = user.getAllStudents();
             for (int i = 0; i < students.size(); i++) {
