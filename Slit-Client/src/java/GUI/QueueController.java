@@ -53,13 +53,14 @@ public class QueueController implements Initializable {
     
     @FXML
     private void actionQueue(ActionEvent event) {
+        StudentNavn.add("Jens");
         listProperty.set(FXCollections.observableArrayList(StudentNavn));
     }
     
     @FXML
     private void Quexit(ActionEvent event) 
     {
-        StudentNavn.remove("Erik");
+        StudentNavn.remove("Jens");
         listProperty.set(FXCollections.observableArrayList(StudentNavn));
     }
     
@@ -68,7 +69,6 @@ public class QueueController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        StudentNavn.add("Erik");
         StudentKøListe.itemsProperty().bind(listProperty);
     }    
 
