@@ -60,7 +60,7 @@ public class ListTeacherSideController implements Initializable {
     @FXML
     private void showStudentList(ActionEvent event) {
         FXCollections.observableList(user.getAllStudents());
-        listView.setItems(observableList);
+        
     }
 
 }
