@@ -45,23 +45,15 @@ public class QueueController implements Initializable {
     protected List<StudentDataModel> StudentNavn = new ArrayList<>();
     protected ListProperty<StudentDataModel> listProperty = new SimpleListProperty<>();
     
-    private void StudentKøListe()
-    {
-        //ObservableList<String> items = FXCollections.observableArrayList (Student.firstName);
-        //ObservableList<String> items = FXCollections.observableArrayList();
-        
-        //StudentKøListe.setItems(items);
-    }
     
     ObservableList<String> items = FXCollections.observableArrayList();
     
     @FXML
     private void actionQueue(ActionEvent event) {
-        //StudentNavn.add("Jens");
 
         listProperty.set(FXCollections.observableArrayList(StudentNavn));
         try {
-            Student = user.getStudent("001");
+            Student = user.getStudent("002");
             {
                 items.add(Student.firstName);
             }
@@ -76,9 +68,6 @@ public class QueueController implements Initializable {
     private void Quexit(ActionEvent event) 
     {
         items.remove(Student.firstName);
-        //StudentNavn.remove("Jens");
-        //listProperty.set(FXCollections.observableArrayList(StudentNavn));
-        StudentNavn.remove("Erik");
         listProperty.set(FXCollections.observableArrayList(StudentNavn));
     }
     
@@ -86,11 +75,11 @@ public class QueueController implements Initializable {
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        //StudentKøListe.itemsProperty().bind(listProperty);
+    public void initialize(URL url, ResourceBundle rb) 
+    {
+        
     }       
-        //StudentNavn.add("Erik");
-        //StudentKøListe.itemsProperty().bind(listProperty);
+
     }    
 
    
