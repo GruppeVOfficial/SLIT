@@ -64,25 +64,13 @@ public class RedigerModulController implements Initializable {
     @FXML
     private void saveModulEvent(ActionEvent event) {
         if(currentModule.getModuleID() != null){
-        /**
-         *         currentModule.setModuleID(ModuleIDText.getText());
-        currentModule.setModuleName(ModuleNameText.getText());
-        currentModule.setRequierments(RequiermentsText.getText());
-        currentModule.setTeacherID(TeacherIDText.getText());
-        currentModule.setDescription(DescriptionText.getText());
-        currentModule.setDeadline(datePicker.getValue().toString());
-         
-         */
-
         modules.updateModule(this.ModuleIDText.getText(), this.ModuleNameText.getText(), this.RequiermentsText.getText(), this.TeacherIDText.getText(), this.DescriptionText.getText(), this.GoalsText.getText(), this.datePicker.getValue().toString());
 
-        
         this.errorText.setText("Modul lagret");
         
         }
         else{
         Debug.PrintError("Noe gikk galt");
-
         }  
         
     }
@@ -90,21 +78,16 @@ public class RedigerModulController implements Initializable {
     @FXML
     private void getModule1(ActionEvent event) {
         UpdateModule("001");
-
-
     }
 
     @FXML
     private void getModule2(ActionEvent event) {
         UpdateModule("002");
-
-
     }
 
     @FXML
     private void getModule3(ActionEvent event) {
         UpdateModule("003");
-
     }
 
     @FXML
@@ -130,29 +113,30 @@ public class RedigerModulController implements Initializable {
         TeacherIDText.setText(currentModule.getTeacherID());
         DescriptionText.setText(currentModule.getDescription());
         GoalsText.setText(currentModule.getGoals());
- 
 
-
-
-    } else {
+    }   else {
         Debug.PrintError("Cannot access the Module! Is the requested ID correct?");
         errorText.setText("No Module :(");
-        
-
-
-    }
+        }
     }
 
     void UpdateModule(String id){
     try {
         setCurrentModule(id);
         setCurrentModuleInfo();
-   } catch (IllegalArgumentException e) {
+    } 
+    catch (IllegalArgumentException e) {
        e.printStackTrace();
-   }
-
-    
+   }   
 }
-        }
+
+    @FXML
+    private void deleteModule(ActionEvent event) {
+    }
+
+    @FXML
+    private void logOut(ActionEvent event) {
+    }
+}
 
 

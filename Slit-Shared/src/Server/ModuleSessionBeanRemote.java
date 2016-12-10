@@ -22,6 +22,6 @@ public interface ModuleSessionBeanRemote {
     
     void saveModuleDataModel(ModuleDataModel moduleDataModel);
     
-    void updateModule(String id);
+    void updateModule(String id, String moduleName, String requierments, String teacherID, String description, String goals, String deadline);
 }
 

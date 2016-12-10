@@ -25,7 +25,16 @@ public class ModuleSessionBean implements ModuleSessionBeanRemote {
     public void persist(Object object) {
         em.persist(object);
     }
-    
+    /**
+     * Takes parameters so create a module object and persists it. 
+     * @param moduleID
+     * @param modulename
+     * @param requierments
+     * @param teacherID
+     * @param description
+     * @param goals
+     * @param deadline 
+     */
     @Override
     public void addModule(String moduleID, String modulename, String requierments, String teacherID, String description, String goals, String deadline){
             
@@ -78,7 +87,11 @@ public class ModuleSessionBean implements ModuleSessionBeanRemote {
         }
     }
     
-    
+    /**
+     * Takes parameter id and finds a module in the database, then converting it to a datamodel(pojo)
+     * @param id
+     * @return returns a datamodel of the type module
+     */
     @Override
     public ModuleDataModel getModel(String id){
     
@@ -91,8 +104,7 @@ public class ModuleSessionBean implements ModuleSessionBeanRemote {
             if(module != null){
                 modulDataModel = this.convertModuleEntityToModuleDataModel(module);
             }
-            
-            
+      
         }
         catch(Exception exception){
              
@@ -101,7 +113,11 @@ public class ModuleSessionBean implements ModuleSessionBeanRemote {
         return modulDataModel;
     }
     
-    
+    /**
+     * converts a module entity object to a datamodel (pojo)
+     * @param modul
+     * @return the datamodel of the type module 
+     */
     public ModuleDataModel convertModuleEntityToModuleDataModel(Module modul){
     
         ModuleDataModel moduleDataModel = new ModuleDataModel();
@@ -120,6 +136,10 @@ public class ModuleSessionBean implements ModuleSessionBeanRemote {
         return moduleDataModel;
     }
     
+    /**
+     * Converts the datamodel of the type module to a entity object and persists it to the database 
+     * @param moduleDataModel 
+     */
     @Override
     public void saveModuleDataModel(ModuleDataModel moduleDataModel){
         try{
@@ -132,7 +152,11 @@ public class ModuleSessionBean implements ModuleSessionBeanRemote {
         
         }
     }
-    
+    /**
+     * This methode returns a module entity object, converted from a data model of the type module 
+     * @param moduleDataModel
+     * @return 
+     */
     public Module convertDataModelToModuleEntity(ModuleDataModel moduleDataModel){
     
         Module module = new Module();
@@ -158,11 +182,6 @@ public class ModuleSessionBean implements ModuleSessionBeanRemote {
         return module;
     }
 
- 
-
-    
-    
-    
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
