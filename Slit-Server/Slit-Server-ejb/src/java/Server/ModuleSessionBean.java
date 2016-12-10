@@ -49,6 +49,16 @@ public class ModuleSessionBean implements ModuleSessionBeanRemote {
     }
     
     @Override
+    public void updateModule(String id){
+        Module module = em.find(Module.class, id);
+        em.getTransaction().begin();
+        module.setModuleID("002");
+        em.getTransaction().commit();
+    
+    }
+    
+    
+    @Override
     public ModuleDataModel getModel(String id){
     
         ModuleDataModel modulDataModel = new ModuleDataModel();

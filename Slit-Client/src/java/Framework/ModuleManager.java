@@ -31,6 +31,14 @@ public class ModuleManager {
         }
       
     }
+
+    /**
+     *
+     * @param id
+     */
+    public void updateModule(String id){
+    
+    }
     
     public void addModule(String moduleID, String modulename, String requierments, String teacherID, String description, String goals, String deadline){
     
