@@ -64,12 +64,18 @@ public class RedigerModulController implements Initializable {
     @FXML
     private void saveModulEvent(ActionEvent event) {
         if(currentModule.getModuleID() != null){
-        currentModule.setModuleID(ModuleIDText.getText());
+        /**
+         *         currentModule.setModuleID(ModuleIDText.getText());
         currentModule.setModuleName(ModuleNameText.getText());
         currentModule.setRequierments(RequiermentsText.getText());
         currentModule.setTeacherID(TeacherIDText.getText());
         currentModule.setDescription(DescriptionText.getText());
         currentModule.setDeadline(datePicker.getValue().toString());
+         
+         */
+
+        modules.updateModule(this.ModuleIDText.getText(), this.ModuleNameText.getText(), this.RequiermentsText.getText(), this.TeacherIDText.getText(), this.DescriptionText.getText(), this.GoalsText.getText(), this.datePicker.getValue().toString());
+
         
         this.errorText.setText("Modul lagret");
         

@@ -32,12 +32,18 @@ public class ModuleManager {
       
     }
 
-    /**
-     *
-     * @param id
-     */
-    public void updateModule(String id){
-    
+/**
+ * 
+ * @param id
+ * @param moduleName
+ * @param requierments
+ * @param teacherID
+ * @param description
+ * @param goals
+ * @param deadline 
+ */
+    public void updateModule(String id, String moduleName, String requierments, String teacherID, String description, String goals, String deadline){
+        this.lookupModuleSessionBeanRemote().updateModule(id, moduleName, requierments, teacherID, description, goals, deadline);
     }
     
     public void addModule(String moduleID, String modulename, String requierments, String teacherID, String description, String goals, String deadline){

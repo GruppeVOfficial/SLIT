@@ -48,13 +48,34 @@ public class ModuleSessionBean implements ModuleSessionBeanRemote {
         }
     }
     
+    /**
+     * Finds a module and edits the info about the module
+     * @param id
+     * @param moduleName
+     * @param requierments
+     * @param teacherID
+     * @param description
+     * @param goals
+     * @param deadline 
+     */
     @Override
-    public void updateModule(String id){
+    public void updateModule(String id, String moduleName, String requierments, String teacherID, String description, String goals, String deadline){
+        try {
+        
         Module module = em.find(Module.class, id);
-        em.getTransaction().begin();
-        module.setModuleID("002");
-        em.getTransaction().commit();
-    
+        
+        module.setModuleID(id);
+        module.setModuleName(moduleName);
+        module.setRequirements(requierments);
+        module.setTeacherID(em.find(Teacher.class, teacherID));
+        module.setDescription(description);
+        module.setGoals(goals);
+        module.setDeadline(deadline);
+        
+        }
+        catch(Exception e){
+        e.printStackTrace();
+        }
     }
     
     
@@ -145,4 +166,6 @@ public class ModuleSessionBean implements ModuleSessionBeanRemote {
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
+
+
 }
