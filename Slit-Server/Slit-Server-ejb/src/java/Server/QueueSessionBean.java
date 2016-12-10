@@ -6,6 +6,7 @@
 package Server;
 
 import DataModel.StudentDataModel;
+import Database.Queue;
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
 import javax.persistence.EntityManager;
@@ -27,7 +28,9 @@ public class QueueSessionBean implements QueueSessionBeanRemote {
 
     @Override
     public void addQueueToBase(StudentDataModel Student) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Queue queue = new Queue();
+        queue.setStudentID(Student.getUserid());
+        em.persist(queue);
     }
     
 

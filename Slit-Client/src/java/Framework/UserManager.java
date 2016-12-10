@@ -32,7 +32,7 @@ public class UserManager {
     }
 
     
-    public void insertUser(int userid, String firstName, String lastName, String email, String phoneNumber, String username, String password)
+    public void insertUser(String userid, String firstName, String lastName, String email, String phoneNumber, String username, String password)
     {
         this.lookupUserSessionBeanRemote().insertUser(userid, firstName, lastName, email, phoneNumber, username, password);
     }

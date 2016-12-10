@@ -21,6 +21,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import Framework.UserManager;
+import Server.QueueSessionBeanRemote;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 
 /**
  * FXML Controller class
@@ -42,6 +48,8 @@ public class QueueController implements Initializable {
     UserManager user = new UserManager();
     
     
+    
+    
     protected List<StudentDataModel> StudentNavn = new ArrayList<>();
     protected ListProperty<StudentDataModel> listProperty = new SimpleListProperty<>();
     
@@ -54,10 +62,13 @@ public class QueueController implements Initializable {
         listProperty.set(FXCollections.observableArrayList(StudentNavn));
         try {
             Student = user.getStudent("002");
+            //autentiseringsmetode som hadde lagt til "this.loggedinStudent". 
             {
                 items.add(Student.firstName);
             }
             StudentKøListe.setItems(items);
+            //istedefor student ville vi lagt inn "thisLoggedInStudent"
+            lookupQueueSessionBeanRemote().addQueueToBase(Student);
        } catch (IllegalArgumentException e) {
            e.printStackTrace();
        }
@@ -79,6 +90,16 @@ public class QueueController implements Initializable {
     {
         
     }       
+
+    private QueueSessionBeanRemote lookupQueueSessionBeanRemote() {
+        try {
+            Context c = new InitialContext();
+            return (QueueSessionBeanRemote) c.lookup("java:comp/env/QueueSessionBean");
+        } catch (NamingException ne) {
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
+            throw new RuntimeException(ne);
+        }
+    }
 
     }    
 

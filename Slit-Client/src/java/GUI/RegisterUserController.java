@@ -74,7 +74,7 @@ public class RegisterUserController implements Initializable {
             UserManager usermanager = new UserManager();
             ArrayList<StudentDataModel> studentList = new ArrayList();
             studentList = usermanager.getAllStudents();
-            int i = studentList.get(studentList.size()).getUserid();
+            String i = studentList.get(studentList.size()).getUserid();
             //String newStudentid = correctId(i);
             users.insertUser(i, this.Fornavn.getText(), this.Etternavn.getText(), this.Epost.getText(), this.Telefon.getText(), this.Brukernavn.getText(), this.Passord.getText());
             this.errorText.setText("Bruker lagt til");
