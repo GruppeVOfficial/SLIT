@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LoginController">
+   <children>
+      <Text layoutX="438.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" />
+      <Button layoutX="569.0" layoutY="374.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="157.0" text="Teacher" />
+      <Button layoutX="203.0" layoutY="382.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="151.0" text="Student" />
+      <Text layoutX="385.0" layoutY="135.0" strokeWidth="0.0" text="SLIT" textAlignment="CENTER">
+         <font>
+            <Font size="80.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0">
+         <children>
+            <Text layoutX="375.0" layoutY="125.0" strokeWidth="0.0" text="SLIT" textAlignment="CENTER">
+               <font>
+                  <Font size="80.0" />
+               </font>
+            </Text>
+            <Button layoutX="193.0" layoutY="372.0" mnemonicParsing="false" onAction="#StudentAction" prefHeight="74.0" prefWidth="151.0" text="Student" />
+            <Button layoutX="559.0" layoutY="364.0" mnemonicParsing="false" onAction="#TeacherAction" prefHeight="82.0" prefWidth="157.0" text="Teacher" />
+            <Text layoutX="428.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
