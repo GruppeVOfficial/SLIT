@@ -20,6 +20,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import Framework.UserManager;
 
 /**
  * FXML Controller class
@@ -38,30 +39,44 @@ public class QueueController implements Initializable {
     private ListView<String> StudentKøListe;
     
     private StudentDataModel Student;
+    UserManager user = new UserManager();
     
     
-    protected List<String> StudentNavn = new ArrayList<>();
-    protected ListProperty<String> listProperty = new SimpleListProperty<>();
+    protected List<StudentDataModel> StudentNavn = new ArrayList<>();
+    protected ListProperty<StudentDataModel> listProperty = new SimpleListProperty<>();
     
     private void StudentKøListe()
     {
         //ObservableList<String> items = FXCollections.observableArrayList (Student.firstName);
-        ObservableList<String> items = FXCollections.observableArrayList(StudentNavn);
+        //ObservableList<String> items = FXCollections.observableArrayList();
         
-        StudentKøListe.setItems(items);
+        //StudentKøListe.setItems(items);
     }
+    
+    ObservableList<String> items = FXCollections.observableArrayList();
     
     @FXML
     private void actionQueue(ActionEvent event) {
-        StudentNavn.add("Jens");
+        //StudentNavn.add("Jens");
         listProperty.set(FXCollections.observableArrayList(StudentNavn));
+        try {
+            Student = user.getStudent("001");
+            {
+                items.add(Student.firstName);
+            }
+            StudentKøListe.setItems(items);
+       } catch (IllegalArgumentException e) {
+           e.printStackTrace();
+       }
     }
     
+
     @FXML
     private void Quexit(ActionEvent event) 
     {
-        StudentNavn.remove("Jens");
-        listProperty.set(FXCollections.observableArrayList(StudentNavn));
+        items.remove(Student.firstName);
+        //StudentNavn.remove("Jens");
+        //listProperty.set(FXCollections.observableArrayList(StudentNavn));
     }
     
     /**
@@ -69,7 +84,7 @@ public class QueueController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        StudentKøListe.itemsProperty().bind(listProperty);
+        //StudentKøListe.itemsProperty().bind(listProperty);
     }       
 
 }
