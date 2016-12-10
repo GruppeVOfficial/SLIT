@@ -27,7 +27,7 @@
                   <Font size="50.0" />
                </font>
             </Text>
-            <Button fx:id="loggOutbtn" layoutX="896.0" layoutY="21.0" mnemonicParsing="false" text="Logg ut" />
+            <Button fx:id="loggOutbtn" layoutX="896.0" layoutY="21.0" mnemonicParsing="false" onAction="#LogOut" text="Logg ut" />
             <Label layoutX="751.0" layoutY="26.0" prefHeight="17.0" prefWidth="145.0" text="Fritjof Hansen" />
             <Label fx:id="moduleTitle" layoutX="240.0" layoutY="65.0" prefHeight="29.0" prefWidth="401.0">
                <font>

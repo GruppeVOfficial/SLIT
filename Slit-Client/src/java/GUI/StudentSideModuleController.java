@@ -11,6 +11,7 @@ import Framework.ModuleManager;
 import Utils.Debug;
 import Utils.Utilities;
 import com.sun.prism.paint.Color;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -112,6 +113,11 @@ public class StudentSideModuleController implements Initializable {
         
        
         
+    }
+
+    @FXML
+    private void LogOut(ActionEvent event) throws IOException {
+        Utilities.changeScene(event, this.getClass(), "Login", "Login");
     }
 
     

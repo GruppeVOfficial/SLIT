@@ -92,9 +92,13 @@ public class ListTeacherSideController implements Initializable {
         
         StudentListeBtn.getScene().setCursor(Cursor.DEFAULT);
     }
+
+    @FXML
+    private void LogOut(ActionEvent event) throws IOException {
+        Utilities.changeScene(event, this.getClass(), "Login", "Login");
+    }
     
 }
-
 
       
     

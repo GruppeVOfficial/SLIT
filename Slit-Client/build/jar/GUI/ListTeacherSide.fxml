@@ -27,7 +27,7 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Button fx:id="loggUt" layoutX="815.0" layoutY="26.0" mnemonicParsing="false" text="Logg ut" />
+      <Button fx:id="loggUt" layoutX="815.0" layoutY="26.0" mnemonicParsing="false" onAction="#LogOut" text="Logg ut" />
 
       <Button fx:id="redigerModuler" layoutX="646.0" layoutY="26.0" mnemonicParsing="false" onAction="#goToRedigerModuler" text="Rediger moduler" />
       <Button fx:id="StudentListeBtn" layoutX="82.0" layoutY="72.0" mnemonicParsing="false" onAction="#showStudentList" text="Oppdater" />
