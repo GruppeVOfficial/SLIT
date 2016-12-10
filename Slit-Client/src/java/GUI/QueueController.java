@@ -58,6 +58,7 @@ public class QueueController implements Initializable {
     @FXML
     private void actionQueue(ActionEvent event) {
         //StudentNavn.add("Jens");
+
         listProperty.set(FXCollections.observableArrayList(StudentNavn));
         try {
             Student = user.getStudent("001");
@@ -77,6 +78,8 @@ public class QueueController implements Initializable {
         items.remove(Student.firstName);
         //StudentNavn.remove("Jens");
         //listProperty.set(FXCollections.observableArrayList(StudentNavn));
+        StudentNavn.remove("Erik");
+        listProperty.set(FXCollections.observableArrayList(StudentNavn));
     }
     
     /**
@@ -86,5 +89,8 @@ public class QueueController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         //StudentKøListe.itemsProperty().bind(listProperty);
     }       
+        //StudentNavn.add("Erik");
+        //StudentKøListe.itemsProperty().bind(listProperty);
+    }    
 
-}
+   

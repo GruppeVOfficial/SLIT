@@ -7,6 +7,9 @@ package GUI;
 
 import DataModel.StudentDataModel;
 import Framework.UserManager;
+import Utils.Debug;
+import Utils.Utilities;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -20,6 +23,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+
 
 
 /**
@@ -62,17 +66,19 @@ public class ListTeacherSideController implements Initializable {
     }
     
     @FXML
-    private void Ayy() {
-       redigerModuler.getScene().setCursor(Cursor.WAIT);
-        redigerModuler.getScene().setCursor(Cursor.DEFAULT);
+    private void goToRedigerModuler(ActionEvent event) throws IOException {
+        Utilities.changeScene(event, this.getClass(), "ModuleCreate", "Kø");
     }
+    
+   
 
     void getStudentList() {
-        StudentListeBtn.getScene().setCursor(Cursor.WAIT);
+        
         ArrayList<StudentDataModel> students = new ArrayList();
         ObservableList<String> data = FXCollections.observableArrayList();
 
         try {
+            StudentListeBtn.getScene().setCursor(Cursor.WAIT);
             students = user.getAllStudents();
             for (int i = 0; i < students.size(); i++) {
                 data.add(students.get(i).firstName);

@@ -164,5 +164,4 @@ public class Module implements Serializable {
     public String toString() {
         return "Database.Module[ moduleID=" + moduleID + " ]";
     }
-    
 }
