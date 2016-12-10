@@ -8,14 +8,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="GUI.RedigerModulController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.RedigerModulController">
    <children>
-      <ScrollPane layoutX="10.0" layoutY="83.0" pannable="true" prefHeight="522.0" prefWidth="896.0">
+      <ScrollPane layoutX="10.0" layoutY="83.0" pannable="true" prefHeight="516.0" prefWidth="896.0">
          <content>
             <AnchorPane prefHeight="892.0" prefWidth="896.0">
                <children>
-                  <Text layoutX="5.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lag modul" textAlignment="CENTER" wrappingWidth="174.3565592765808">
+                  <Text layoutX="-6.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rediger modul" textAlignment="CENTER" wrappingWidth="279.3565592765808">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -63,12 +62,13 @@
                   </Label>
                   <Button fx:id="save" layoutX="326.0" layoutY="819.0" mnemonicParsing="false" onAction="#saveModulEvent" text="Lagre" />
                   <Button fx:id="AvbrytBtn" layoutX="418.0" layoutY="818.0" mnemonicParsing="false" text="Avbryt" />
-                  <Label fx:id="errorText" layoutX="504.0" layoutY="42.0" prefHeight="46.0" prefWidth="288.0">
+                  <Label fx:id="errorText" layoutX="504.0" layoutY="42.0" prefHeight="95.0" prefWidth="352.0">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Label>
                   <DatePicker fx:id="datePicker" layoutX="16.0" layoutY="765.0" />
+                  <Button layoutX="16.0" layoutY="819.0" mnemonicParsing="false" onAction="#deleteModule" text="Slett modul" textFill="#ee0202" />
                </children>
             </AnchorPane>
          </content>
@@ -86,5 +86,6 @@
       <Button layoutX="375.0" layoutY="46.0" mnemonicParsing="false" onAction="#getModule3" text="Modul 3" />
       <Button layoutX="452.0" layoutY="46.0" mnemonicParsing="false" onAction="#getModule4" text="Modul 4" />
       <Button layoutX="532.0" layoutY="46.0" mnemonicParsing="false" onAction="#getModule5" text="Modul 5" />
+      <Button layoutX="824.0" layoutY="46.0" mnemonicParsing="false" onAction="#logOut" text="Logg ut" />
    </children>
 </AnchorPane>

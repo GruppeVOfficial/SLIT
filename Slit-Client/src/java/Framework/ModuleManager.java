@@ -54,4 +54,7 @@ public class ModuleManager {
     public ModuleDataModel getModel(String id){
         return this.lookupModuleSessionBeanRemote().getModel(id);
     }
+    public void removeModule(String Id){
+        this.lookupModuleSessionBeanRemote().removeModule(Id);
+    }
 }

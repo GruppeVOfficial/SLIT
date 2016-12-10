@@ -9,6 +9,7 @@ import DataModel.ModuleDataModel;
 import Framework.ModuleManager;
 import Utils.Debug;
 import Utils.Utilities;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -60,7 +61,11 @@ public class RedigerModulController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
+    /**
+     * This method checks if the module ID is added, before it adds a new 
+     * module to the database. It uses the text fiels form the GUI to create it 
+     * @param event 
+     */
     @FXML
     private void saveModulEvent(ActionEvent event) {
         if(currentModule.getModuleID() != null){
@@ -74,7 +79,10 @@ public class RedigerModulController implements Initializable {
         }  
         
     }
-
+    /**
+     * The buttons underneath updates the current module to a spesific nubmber. 
+     * @param event 
+     */
     @FXML
     private void getModule1(ActionEvent event) {
         UpdateModule("001");
@@ -99,12 +107,17 @@ public class RedigerModulController implements Initializable {
     private void getModule5(ActionEvent event) {
         UpdateModule("005");
     }
-    
+    /**
+     *This method 
+     * @param moduleID 
+     */
     void setCurrentModule(String moduleID) {
     currentModule = modules.getModel(moduleID);
     }
     
-    
+    /**
+     * This method displays the info about the current module
+     */
     void setCurrentModuleInfo() {
     if (currentModule.getModuleName() != null) {
         ModuleIDText.setText(currentModule.getModuleID());
@@ -119,7 +132,10 @@ public class RedigerModulController implements Initializable {
         errorText.setText("No Module :(");
         }
     }
-
+    /**
+     * 
+     * @param id 
+     */
     void UpdateModule(String id){
     try {
         setCurrentModule(id);
@@ -132,10 +148,19 @@ public class RedigerModulController implements Initializable {
 
     @FXML
     private void deleteModule(ActionEvent event) {
+        if(currentModule.getModuleID() != null){
+            modules.removeModule(currentModule.getModuleID());
+            this.errorText.setText("Modulen er slettet");
+        }
+        else {
+            this.errorText.setText("Noe gikk galt under slettingen av modulen");
+        } 
+        
     }
 
     @FXML
-    private void logOut(ActionEvent event) {
+    private void logOut(ActionEvent event) throws IOException {
+        Utilities.changeScene(event, this.getClass(), "Login.fxml", "Login");
     }
 }
 
