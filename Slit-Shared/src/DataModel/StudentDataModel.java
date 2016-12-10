@@ -12,8 +12,8 @@ package DataModel;
 public class StudentDataModel implements java.io.Serializable {
     
     private int userid;
-    private String firstName;
-    private String lastName; 
+    public String firstName;
+    public String lastName; 
     private String email;
     private String phoneNumber; 
     private String username;
@@ -73,6 +73,10 @@ public class StudentDataModel implements java.io.Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getUserid(String userId) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

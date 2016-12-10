@@ -6,12 +6,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="694.0" prefWidth="989.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ModulSideStudentController">
+<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="694.0" prefWidth="989.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.StudentSideModuleController">
   <items>
     <AnchorPane minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0">
          <children>
-            <Button fx:id="module1btn" layoutX="14.0" layoutY="110.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="152.0" text="Module 1" />
-            <Button fx:id="module2btn" layoutX="14.0" layoutY="149.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="152.0" text="Module 2" />
+            <Button fx:id="module1btn" layoutX="14.0" layoutY="110.0" mnemonicParsing="false" onAction="#module1btn" prefHeight="31.0" prefWidth="152.0" text="Module 1" />
+            <Button fx:id="module2btn" layoutX="14.0" layoutY="149.0" mnemonicParsing="false" onAction="#module2btn" prefHeight="31.0" prefWidth="152.0" text="Module 2" />
             <Button fx:id="module3btn" layoutX="14.0" layoutY="189.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="152.0" text="Module 3" />
             <Button fx:id="modul4btn" layoutX="14.0" layoutY="231.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="152.0" text="Module 4" />
             <Button fx:id="module5btn" layoutX="14.0" layoutY="274.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="152.0" text="Module 5" />
@@ -20,15 +20,20 @@
                   <Button layoutX="25.0" layoutY="14.0" mnemonicParsing="false" text="Button" />
                </children>
             </AnchorPane>
-            <Button fx:id="queuebtn" layoutX="240.0" layoutY="63.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="125.0" text="KØ" />
+            <Button fx:id="queuebtn" layoutX="836.0" layoutY="64.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="125.0" text="KØ" />
             <TextArea fx:id="moduleText" layoutX="240.0" layoutY="110.0" prefHeight="554.0" prefWidth="721.0" text="BLUEJ, Klasser og Objekter&#10;&#10;----&#10;&#10;Ressurser&#10;&#10;----&#10;&#10;Oppgave&#10;&#10;----&#10;&#10;Godkjenning&#10;&#10;----" />
             <Text layoutX="14.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SLIT" textAlignment="CENTER" wrappingWidth="178.6708984375" AnchorPane.bottomAnchor="598.451171875" AnchorPane.leftAnchor="14.0">
                <font>
                   <Font size="50.0" />
                </font>
             </Text>
-            <Button fx:id="loggOutbtn" layoutX="896.0" layoutY="63.0" mnemonicParsing="false" text="Logg ut" />
-            <Label layoutX="727.0" layoutY="68.0" prefHeight="17.0" prefWidth="145.0" text="Fritjof Hansen" />
+            <Button fx:id="loggOutbtn" layoutX="896.0" layoutY="21.0" mnemonicParsing="false" text="Logg ut" />
+            <Label layoutX="751.0" layoutY="26.0" prefHeight="17.0" prefWidth="145.0" text="Fritjof Hansen" />
+            <Label fx:id="moduleTitle" layoutX="240.0" layoutY="65.0" prefHeight="29.0" prefWidth="401.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
   </items>
 </SplitPane>

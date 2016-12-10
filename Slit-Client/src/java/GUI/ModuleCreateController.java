@@ -6,6 +6,7 @@
 package GUI;
 
 import Framework.ModuleManager;
+import Utils.Debug;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -48,6 +49,8 @@ public class ModuleCreateController implements Initializable {
 
     @FXML
     private Label errorText;
+    @FXML
+    private Button save;
 
     /**
      * Initializes the controller class.
@@ -65,17 +68,11 @@ public class ModuleCreateController implements Initializable {
         }
         
         if (this.ModuleIDText.getText() != null){
-  
-            module.addModule("10", "Module5", "MASSE TEKST REQUERMENTS",  "002", "MASSE TEKST DESCRIPTION", "MASSE TEKST GOALS", "2017-09-05");
-
-           //module.addModule((this.ModuleIDText.getText()), (this.ModuleNameText.getText()), (this.RequiermentsText.getText()), (this.TeacherIDText.getText()) ,(this.DescriptionText.getText()) , (this.GoalsText.getText()), (this.datePicker.getValue().toString()));
-            //module.addModule("11", "Module6", "MASSE TEKST REQUERMENTS",  "002", "MASSE TEKST DESCRIPTION", "MASSE TEKST GOALS", "2017-09-05");
-
            module.addModule(this.ModuleIDText.getText(), this.ModuleNameText.getText(), this.RequiermentsText.getText(), this.TeacherIDText.getText() ,this.DescriptionText.getText() , this.GoalsText.getText(), this.datePicker.getValue().toString());
            this.errorText.setText("Modul lagt til"); 
            }
         else{
-            System.out.println("Noe gikk galt");
+            Debug.PrintError("Noe gikk galt");
 
         }   
     }

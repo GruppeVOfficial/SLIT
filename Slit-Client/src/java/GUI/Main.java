@@ -28,7 +28,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception{
 
-        Parent root = FXMLLoader.load(getClass().getResource("ModuleCreate.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Queue.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -43,7 +43,8 @@ public class Main extends Application {
         
         launch(args);
     }
- 
+    
+    //en endring
 }
 
 
