@@ -9,8 +9,6 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 /**
  *
@@ -20,19 +18,13 @@ import javax.validation.constraints.Size;
 public class DeliverablePK implements Serializable {
 
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 16)
-    @Column(name = "studentID")
+    @Column(name = "studentID", nullable = false, length = 16)
     private String studentID;
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 45)
-    @Column(name = "moduleID")
+    @Column(name = "moduleID", nullable = false, length = 45)
     private String moduleID;
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 10)
-    @Column(name = "feedbackID")
+    @Column(name = "feedbackID", nullable = false, length = 10)
     private String feedbackID;
 
     public DeliverablePK() {

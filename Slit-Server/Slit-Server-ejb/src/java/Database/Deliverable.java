@@ -32,13 +32,13 @@ public class Deliverable implements Serializable {
     private static final long serialVersionUID = 1L;
     @EmbeddedId
     protected DeliverablePK deliverablePK;
-    @JoinColumn(name = "studentID", referencedColumnName = "studentID", insertable = false, updatable = false)
+    @JoinColumn(name = "studentID", referencedColumnName = "studentID", nullable = false, insertable = false, updatable = false)
     @ManyToOne(optional = false)
     private Student student;
-    @JoinColumn(name = "moduleID", referencedColumnName = "moduleID", insertable = false, updatable = false)
+    @JoinColumn(name = "moduleID", referencedColumnName = "moduleID", nullable = false, insertable = false, updatable = false)
     @ManyToOne(optional = false)
     private Module module;
-    @JoinColumn(name = "feedbackID", referencedColumnName = "feedbackID", insertable = false, updatable = false)
+    @JoinColumn(name = "feedbackID", referencedColumnName = "feedbackID", nullable = false, insertable = false, updatable = false)
     @ManyToOne(optional = false)
     private Feedback feedback;
 

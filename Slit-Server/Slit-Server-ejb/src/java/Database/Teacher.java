@@ -15,8 +15,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -41,28 +39,19 @@ public class Teacher implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 16)
-    @Column(name = "teacherID")
+    @Column(name = "teacherID", nullable = false, length = 16)
     private String teacherID;
-    @Size(max = 45)
-    @Column(name = "FirstName")
+    @Column(name = "FirstName", length = 45)
     private String firstName;
-    @Size(max = 45)
-    @Column(name = "Lastname")
+    @Column(name = "Lastname", length = 45)
     private String lastname;
-    // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
-    @Size(max = 45)
-    @Column(name = "eMail")
+    @Column(name = "eMail", length = 45)
     private String eMail;
-    @Size(max = 10)
-    @Column(name = "phonenumber")
+    @Column(name = "phonenumber", length = 10)
     private String phonenumber;
-    @Size(max = 16)
-    @Column(name = "userName")
+    @Column(name = "userName", length = 16)
     private String userName;
-    @Size(max = 18)
-    @Column(name = "userPassword")
+    @Column(name = "userPassword", length = 18)
     private String userPassword;
     @OneToMany(mappedBy = "teacherID")
     private List<Feedback> feedbackList;

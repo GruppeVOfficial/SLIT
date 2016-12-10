@@ -20,7 +20,8 @@ public class TeacherSessionBean implements TeacherSessionBeanRemote{
     private EntityManager em;
     
     
-       public void intertTeacher(int teacherid, String firstName, String lastName, String email, String phoneNumber, String username, String password){
+    @Override
+       public void insertTeacher(int teacherid, String firstName, String lastName, String email, String phoneNumber, String username, String password){
         Teacher teacher = new Teacher();
         
         teacher.setFirstName(firstName);
@@ -43,8 +44,4 @@ public class TeacherSessionBean implements TeacherSessionBeanRemote{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public void insertTeacher(int teacherid, String firstName, String lastName, String email, String phoneNumber, String username, String password) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
