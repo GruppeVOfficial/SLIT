@@ -26,7 +26,7 @@ public class UserSessionBean implements UserSessionBeanRemote {
     // "Insert Code > Add Business Method")
 
     @Override
-    public void insertUser(int userid, String firstName, String lastName, String email, String phoneNumber, String username, String password) {
+    public void insertUser(String userid, String firstName, String lastName, String email, String phoneNumber, String username, String password) {
        
         try{
         
@@ -35,7 +35,7 @@ public class UserSessionBean implements UserSessionBeanRemote {
             student.setFirstName(firstName);
             student.setLastname(lastName);
             student.setPhonenumber(phoneNumber);
-            student.setStudentID(Integer.toString(userid));
+            student.setStudentID(userid);
             student.setEMail(email);
             student.setPhonenumber(phoneNumber);
 
@@ -75,7 +75,7 @@ public class UserSessionBean implements UserSessionBeanRemote {
         studentDataModel.setLastName(student.getLastname());
         studentDataModel.setPassword(student.getUserPassword());
         studentDataModel.setPhoneNumber(student.getPhonenumber());
-        studentDataModel.setUserid(Integer.valueOf(student.getStudentID())); 
+        studentDataModel.setUserid(student.getStudentID()); 
         studentDataModel.setUsername(student.getUserName());
          
         return studentDataModel;
@@ -100,7 +100,7 @@ public class UserSessionBean implements UserSessionBeanRemote {
         student.setLastname(studentDataModel.getLastName());
         student.setPhonenumber(studentDataModel.getPhoneNumber());
         student.setEMail(studentDataModel.getEmail());
-        student.setStudentID(Integer.toString(studentDataModel.getUserid()));
+        student.setStudentID(studentDataModel.getUserid());
         student.setUserPassword(studentDataModel.getPassword());
         
         return student;
@@ -119,6 +119,8 @@ public class UserSessionBean implements UserSessionBeanRemote {
     private Student convertStudentEntityToStudentDataModel(StudentDataModel studentDataModel) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+
 
   
 

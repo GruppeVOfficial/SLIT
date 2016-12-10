@@ -8,6 +8,7 @@ package Framework;
 
 import DataModel.StudentDataModel;
 import Server.QueueSessionBeanRemote;
+import java.util.Queue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
