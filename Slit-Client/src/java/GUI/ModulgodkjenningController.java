@@ -28,10 +28,12 @@ public class ModulgodkjenningController implements Initializable {
         // TODO
     }    
 
+    @FXML
     private void LoggUt(ActionEvent event) throws IOException {
         Utilities.changeScene(event, this.getClass(), "Login", "Loginn");
     }
 
+    @FXML
     private void StudentListe(ActionEvent event) throws IOException {
         Utilities.changeScene(event, this.getClass(), "ListTeacherSide", "Studentliste");
     }

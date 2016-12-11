@@ -34,10 +34,11 @@ public class UserSessionBean implements UserSessionBeanRemote {
 
             student.setFirstName(firstName);
             student.setLastname(lastName);
-            student.setPhonenumber(phoneNumber);
+            student.setUserName(username);
             student.setStudentID(userid);
             student.setEMail(email);
             student.setPhonenumber(phoneNumber);
+            student.setUserPassword(password);
 
             em.persist(student);
         }

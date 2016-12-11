@@ -9,8 +9,6 @@ package GUI;
 import DataModel.StudentDataModel;
 import Framework.UserManager;
 import Utils.Debug;
-import Utils.Utilities;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -39,6 +37,7 @@ public class RegisterUserController implements Initializable {
     private TextArea GjentaPassord;
     UserManager users = new UserManager();
     
+    @FXML
     private Label errorText;
     @FXML
     private TextField eMail;
@@ -58,6 +57,8 @@ public class RegisterUserController implements Initializable {
     private Button reg;
     @FXML
     private Button Avbryt;
+    @FXML
+    private TextField studentID;
     
     /**
      * Initializes the controller class.
@@ -70,18 +71,40 @@ public class RegisterUserController implements Initializable {
      * This is probably garbage!
      * Does something with the userID and tries to save create new user
      * @param event 
+<<<<<<< HEAD
      */
 
+=======
+     
+>>>>>>> a645fc3b3ed10fb22f4a9a5034cb853e2c55af4f
     @FXML
     private void saveUserEventTest(ActionEvent event) {
-        System.out.println("start");
         users.insertUser("004", this.Fornavn.getText(), this.Etternavn.getText(), this.Epost.getText(), this.Telefon.getText(), this.Brukernavn.getText(), this.Passord.getText());
-        this.Fornavn.setText("navn");
         this.errorText.setText("Yaaayy");
         
     }
+    * */
     
+        private void saveUserEventTest(ActionEvent event) {
+        
+            if (this.firstName.getText().isEmpty()){
+            this.errorText.setText("En feil ha oppstått");
+        }
+        
+        if (this.firstName.getText() != null){
+            this.errorText.setText("Studenten er lagt til.");
+            users.insertUser(studentID.getText(), firstName.getText(), lastName.getText(), eMail.getText(), phone.getText(), userName.getText(), password.getText()); 
+           }
+        else{
+            Debug.PrintError("Noe gikk galt");
+
+        }   
+    }
+    
+<<<<<<< HEAD
     @FXML
+=======
+>>>>>>> a645fc3b3ed10fb22f4a9a5034cb853e2c55af4f
     private void saveUserEvent(ActionEvent event) {
         if (this.GjentaPassord.getText().isEmpty()){
             this.errorText.setText("En feil har oppstått");
@@ -117,12 +140,10 @@ public class RegisterUserController implements Initializable {
     }
 
     @FXML
-    private void Registrer(ActionEvent event) throws IOException {
-        Utilities.changeScene(event, this.getClass(), "Login", "Login");
+    private void Registrer(ActionEvent event) {
     }
 
     @FXML
-    private void Avbryt(ActionEvent event) throws IOException {
-        Utilities.changeScene(event, this.getClass(), "Login", "Login");
+    private void Avbryt(ActionEvent event) {
     }
 }
