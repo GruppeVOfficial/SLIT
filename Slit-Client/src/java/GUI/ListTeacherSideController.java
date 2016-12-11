@@ -67,7 +67,7 @@ public class ListTeacherSideController implements Initializable {
     
     @FXML
     private void goToRedigerModuler(ActionEvent event) throws IOException {
-        Utilities.changeScene(event, this.getClass(), "ModuleCreate", "Kø");
+        Utilities.changeScene(event, this.getClass(), "RedigerModul", "Rediger Modul");
     }
     
    
