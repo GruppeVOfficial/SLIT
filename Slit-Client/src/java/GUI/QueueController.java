@@ -10,11 +10,7 @@ import DataModel.StudentDataModel;
 import Framework.QueueManager;
 import java.net.URL;
 import java.util.ArrayList;
-import static java.util.Collections.list;
-import java.util.List;
 import java.util.ResourceBundle;
-import javafx.beans.property.ListProperty;
-import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,13 +19,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import Framework.UserManager;
-import Server.QueueSessionBeanRemote;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.scene.Cursor;
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 
 /**
  * FXML Controller class
@@ -54,17 +43,11 @@ public class QueueController implements Initializable {
     
     
     
-    
-    //protected List<StudentDataModel> StudentNavn = new ArrayList<>();
-    //protected ListProperty<StudentDataModel> listProperty = new SimpleListProperty<>();
-    
-    
     ObservableList<String> items = FXCollections.observableArrayList();
     
     @FXML
     private void actionQueue(ActionEvent event) {
 
-        //listProperty.set(FXCollections.observableArrayList(StudentNavn));
         try {
             Student = user.getStudent("notpoop");
             //autentiseringsmetode som hadde lagt til "this.loggedinStudent". 
@@ -82,12 +65,9 @@ public class QueueController implements Initializable {
     
     void getStudentList() {
         
-        //ArrayList<StudentDataModel> students = new ArrayList();
-        //ObservableList<String> data = FXCollections.observableArrayList();
         ArrayList<QueueDataModel> queues = new ArrayList();
 
         try {
-            //students = user.getAllStudents();
             queues = queueM.finneAlle();
             for (int i = 0; i < queues.size(); i++) {
                 items.add(user.getStudent(queues.get(i).getUserid()).firstName);
@@ -111,9 +91,7 @@ public class QueueController implements Initializable {
     private void Quexit(ActionEvent event) 
     {
         // for å vite hvem som skal fjernes må det være en login versjon
-        items.remove(Student.firstName);
-        //listProperty.set(FXCollections.observableArrayList(StudentNavn));
-        
+        items.remove(Student.firstName);   
     }
     
     /**

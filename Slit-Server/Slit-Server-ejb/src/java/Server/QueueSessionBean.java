@@ -8,11 +8,9 @@ package Server;
 import DataModel.QueueDataModel;
 import DataModel.StudentDataModel;
 import Database.Queue;
-import Database.Student;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
-import javax.ejb.LocalBean;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -24,8 +22,7 @@ import javax.persistence.PersistenceContext;
 
 @Stateless
 public class QueueSessionBean implements QueueSessionBeanRemote {
-    private StudentDataModel Student;
-
+    
     @PersistenceContext(unitName = "Slit-Server-ejbPU")
     private EntityManager em;
 
