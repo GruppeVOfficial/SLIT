@@ -5,6 +5,7 @@
  */
 package Framework;
 
+import DataModel.QueueDataModel;
 import DataModel.StudentDataModel;
 import Server.UserSessionBeanRemote;
 import java.util.ArrayList;
@@ -87,4 +88,10 @@ public class UserManager {
         }       
         return s + i;
     }
+    
+    //må sikkert slettes
+    public StudentDataModel getStudent(QueueDataModel stud) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

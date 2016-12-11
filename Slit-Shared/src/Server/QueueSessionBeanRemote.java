@@ -5,6 +5,7 @@
  */
 package Server;
 
+import DataModel.QueueDataModel;
 import javax.ejb.Remote;
 import DataModel.StudentDataModel;
 
@@ -16,5 +17,6 @@ import DataModel.StudentDataModel;
 @Remote
 public interface QueueSessionBeanRemote {
     void addQueueToBase (StudentDataModel student);
+    QueueDataModel getModel(String id);
 }
 

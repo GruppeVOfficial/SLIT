@@ -5,8 +5,10 @@
  */
 package Server;
 
+import DataModel.QueueDataModel;
 import DataModel.StudentDataModel;
 import Database.Queue;
+import Database.Student;
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
 import javax.persistence.EntityManager;
@@ -33,5 +35,36 @@ public class QueueSessionBean implements QueueSessionBeanRemote {
         em.persist(queue);
     }
     
+    @Override
+    public QueueDataModel getModel(String id){
+    
+        QueueDataModel queueDataModel = new QueueDataModel();
+        
+        try{
+            
+            Queue queue = em.find(Queue.class, id);
+            
+            if(queue != null){
+                queueDataModel = this.convertQueueEntityToQueueDataModel(queue);
+            }
+      
+        }
+        catch(Exception exception){
+             
+            exception.printStackTrace();
+        }
+        return queueDataModel;
+    }
+    
+    public QueueDataModel convertQueueEntityToQueueDataModel(Queue queue){
+    
+        QueueDataModel queueDataModel = new QueueDataModel();
+        
+        queueDataModel.setUserid(queue.getStudentID());
+            
+        
+        return queueDataModel;
+    }
+
 
 }

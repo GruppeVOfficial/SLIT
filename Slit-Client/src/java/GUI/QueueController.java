@@ -5,7 +5,9 @@
  */
 package GUI;
 
+import DataModel.QueueDataModel;
 import DataModel.StudentDataModel;
+import Framework.QueueManager;
 import java.net.URL;
 import java.util.ArrayList;
 import static java.util.Collections.list;
@@ -24,6 +26,7 @@ import Framework.UserManager;
 import Server.QueueSessionBeanRemote;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.Cursor;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -46,6 +49,8 @@ public class QueueController implements Initializable {
     
     private StudentDataModel Student;
     UserManager user = new UserManager();
+    QueueManager queueM = new QueueManager();
+    QueueDataModel currentQueue;
     
     
     
@@ -61,25 +66,50 @@ public class QueueController implements Initializable {
 
         //listProperty.set(FXCollections.observableArrayList(StudentNavn));
         try {
-            Student = user.getStudent("001");
+            Student = user.getStudent("003");
             //autentiseringsmetode som hadde lagt til "this.loggedinStudent". 
             {
                 items.add(Student.firstName);
             }
             StudentKøListe.setItems(items);
             //istedefor student ville vi lagt inn "thisLoggedInStudent"
-            lookupQueueSessionBeanRemote().addQueueToBase(Student);
+            queueM.addQueueToBase(Student);
+            
        } catch (IllegalArgumentException e) {
            e.printStackTrace();
        }
     }
     
+    void getStudentList() {
+        
+        ArrayList<QueueDataModel> students = new ArrayList();
+        ObservableList<String> data = FXCollections.observableArrayList();
 
+        try {
+            students = queueM.getAllStudents();
+            for (int i = 0; i < students.size(); i++) {
+                data.add(students.get(i).getUserid());
+            }
+            StudentKøListe.setItems(data);
+       } catch (IllegalArgumentException e) {
+           e.printStackTrace();
+       }
+    }
+    
+    
+@FXML
+    private void ActionUpdate(ActionEvent event) 
+    {
+        getStudentList();
+
+    }
+    
     @FXML
     private void Quexit(ActionEvent event) 
     {
         items.remove(Student.firstName);
         //listProperty.set(FXCollections.observableArrayList(StudentNavn));
+        
     }
     
     /**
@@ -90,17 +120,7 @@ public class QueueController implements Initializable {
     {
         
     }       
-
-    private QueueSessionBeanRemote lookupQueueSessionBeanRemote() {
-        try {
-            Context c = new InitialContext();
-            return (QueueSessionBeanRemote) c.lookup("java:global/Slit-Server-ejb/QueueSessionBean");
-        } catch (NamingException ne) {
-            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
-            throw new RuntimeException(ne);
-        }
-    }
-
+        
     }    
 
    
