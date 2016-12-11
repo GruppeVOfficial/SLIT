@@ -162,6 +162,11 @@ public class RedigerModulController implements Initializable {
     private void LogOut(ActionEvent event) throws IOException {
         Utilities.changeScene(event, this.getClass(), "Login", "Login");
     }
+
+    @FXML
+    private void Avbryt(ActionEvent event) throws IOException {
+        Utilities.changeScene(event, this.getClass(), "ListTeacherSide", "StudentListe");
+    }
 }
 
 

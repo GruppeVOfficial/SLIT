@@ -9,6 +9,8 @@ package GUI;
 import DataModel.StudentDataModel;
 import Framework.UserManager;
 import Utils.Debug;
+import Utils.Utilities;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -18,6 +20,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 /**
@@ -27,30 +30,34 @@ import javafx.scene.text.Text;
  */
 public class RegisterUserController implements Initializable {
 
-    @FXML
-    private Text SLITLabel;
-    @FXML
     private TextArea Brukernavn;
-    @FXML
     private TextArea Fornavn;
-    @FXML
     private TextArea Etternavn;
-    @FXML
     private TextArea Epost;
-    @FXML
     private TextArea Telefon;
-    @FXML
     private TextArea Passord;
-    @FXML
     private TextArea GjentaPassord;
-    @FXML
-    private Button AvbrytBtn;
-    @FXML
-    private Button RegistrerBtn;
     UserManager users = new UserManager();
     
-    @FXML
     private Label errorText;
+    @FXML
+    private TextField eMail;
+    @FXML
+    private TextField lastName;
+    @FXML
+    private TextField firstName;
+    @FXML
+    private TextField userName;
+    @FXML
+    private TextField phone;
+    @FXML
+    private TextField password;
+    @FXML
+    private TextField passwordRepeat;
+    @FXML
+    private Button reg;
+    @FXML
+    private Button Avbryt;
     
     /**
      * Initializes the controller class.
@@ -64,7 +71,6 @@ public class RegisterUserController implements Initializable {
      * Does something with the userID and tries to save create new user
      * @param event 
      */
-    @FXML
     private void saveUserEvent(ActionEvent event) {
         if (this.GjentaPassord.getText().isEmpty()){
             this.errorText.setText("En feil har oppstått");
@@ -97,5 +103,15 @@ public class RegisterUserController implements Initializable {
             s = "";
         }       
         return s + i;
+    }
+
+    @FXML
+    private void Registrer(ActionEvent event) throws IOException {
+        Utilities.changeScene(event, this.getClass(), "Login", "Login");
+    }
+
+    @FXML
+    private void Avbryt(ActionEvent event) throws IOException {
+        Utilities.changeScene(event, this.getClass(), "Login", "Login");
     }
 }
