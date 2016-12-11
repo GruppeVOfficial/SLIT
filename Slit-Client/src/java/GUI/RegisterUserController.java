@@ -9,6 +9,8 @@ package GUI;
 import DataModel.StudentDataModel;
 import Framework.UserManager;
 import Utils.Debug;
+import Utils.Utilities;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -127,10 +129,12 @@ public class RegisterUserController implements Initializable {
     }
 
     @FXML
-    private void Registrer(ActionEvent event) {
+    private void Registrer(ActionEvent event) throws IOException {
+        Utilities.changeScene(event, this.getClass(), "Login", "Loginn");
     }
 
     @FXML
-    private void Avbryt(ActionEvent event) {
+    private void Avbryt(ActionEvent event) throws IOException {
+        Utilities.changeScene(event, this.getClass(), "Login", "Loginn");
     }
 }
