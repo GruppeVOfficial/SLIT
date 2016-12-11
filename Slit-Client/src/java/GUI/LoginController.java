@@ -40,7 +40,7 @@ public class LoginController implements Initializable {
 
     @FXML
     private void RegisterUser(ActionEvent event) throws IOException {
-        Utilities.changeScene(event, this.getClass(), "RegisterUser", "RegistrerBruker");
+        Utilities.changeScene(event, this.getClass(), "RegistrerBruker", "RegistrerBruker");
     }
 
 }
