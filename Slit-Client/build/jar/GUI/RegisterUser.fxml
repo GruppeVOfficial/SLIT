@@ -28,8 +28,13 @@
             <Font size="26.0" />
          </font>
       </Text>
+<<<<<<< HEAD
+      <Button fx:id="reg" layoutX="210.0" layoutY="535.0" mnemonicParsing="false" onAction="#Registrer" text="Registrer" />
+      <Button fx:id="Avbryt" layoutX="132.0" layoutY="535.0" mnemonicParsing="false" onAction="#Avbryt" text="Avbryt" />
+=======
       <Button fx:id="reg" layoutX="210.0" layoutY="535.0" mnemonicParsing="false" onAction="#saveUserEventTest" text="Registrer" />
       <Button fx:id="Avbryt" layoutX="132.0" layoutY="535.0" mnemonicParsing="false" text="Avbryt" />
+>>>>>>> 241719fabedd677205701d2b9ed67f9383991ab8
       <Text layoutX="9.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SLIT" textAlignment="CENTER" wrappingWidth="178.6708984375">
          <font>
             <Font size="50.0" />

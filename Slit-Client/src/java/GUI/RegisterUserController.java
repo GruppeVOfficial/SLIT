@@ -80,7 +80,6 @@ public class RegisterUserController implements Initializable {
     }
     * */
     
-    @FXML
         private void saveUserEventTest(ActionEvent event) {
         
             if (this.firstName.getText().isEmpty()){
@@ -129,5 +128,13 @@ public class RegisterUserController implements Initializable {
             s = "";
         }       
         return s + i;
+    }
+
+    @FXML
+    private void Registrer(ActionEvent event) {
+    }
+
+    @FXML
+    private void Avbryt(ActionEvent event) {
     }
 }
