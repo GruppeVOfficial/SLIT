@@ -159,8 +159,8 @@ public class RedigerModulController implements Initializable {
     }
 
     @FXML
-    private void logOut(ActionEvent event) throws IOException {
-        Utilities.changeScene(event, this.getClass(), "Login.fxml", "Login");
+    private void LogOut(ActionEvent event) throws IOException {
+        Utilities.changeScene(event, this.getClass(), "Login", "Login");
     }
 }
 
