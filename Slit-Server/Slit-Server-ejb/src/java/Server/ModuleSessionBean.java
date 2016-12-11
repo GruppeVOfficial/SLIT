@@ -25,6 +25,11 @@ public class ModuleSessionBean implements ModuleSessionBeanRemote {
     public void persist(Object object) {
         em.persist(object);
     }
+    
+    public void removeModule(String Id){
+        Module module = em.find(Module.class, Id);
+        em.remove(module);
+    }
     /**
      * Takes parameters so create a module object and persists it. 
      * @param moduleID
@@ -37,7 +42,6 @@ public class ModuleSessionBean implements ModuleSessionBeanRemote {
      */
     @Override
     public void addModule(String moduleID, String modulename, String requierments, String teacherID, String description, String goals, String deadline){
-            
         try {
             
             Module module = new Module();
