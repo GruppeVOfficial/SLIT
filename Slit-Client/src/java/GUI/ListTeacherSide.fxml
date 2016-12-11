@@ -34,5 +34,6 @@
 
       <Button fx:id="queueBtn" layoutX="201.0" layoutY="72.0" mnemonicParsing="false" text="Kø" />
       <Label fx:id="btnTestLabel" layoutX="257.0" layoutY="77.0" prefHeight="17.0" prefWidth="196.0" />
+      <Button layoutX="514.0" layoutY="26.0" mnemonicParsing="false" onAction="#addModule" text="Legg til moduler" />
     </children>
 </AnchorPane>

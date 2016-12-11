@@ -7,6 +7,8 @@ package GUI;
 
 import Framework.ModuleManager;
 import Utils.Debug;
+import Utils.Utilities;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -51,6 +53,8 @@ public class ModuleCreateController implements Initializable {
     private Label errorText;
     @FXML
     private Button save;
+    @FXML
+    private Button LogOut1;
 
     /**
      * Initializes the controller class.
@@ -75,6 +79,12 @@ public class ModuleCreateController implements Initializable {
             Debug.PrintError("Noe gikk galt");
 
         }   
+    }
+
+    @FXML
+    private void back(ActionEvent event) throws IOException {
+            Utilities.changeScene(event, this.getClass(), "ListTeacherSide", "HovedSide");
+
     }
     
     }

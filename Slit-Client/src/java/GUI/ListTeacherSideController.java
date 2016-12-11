@@ -97,6 +97,12 @@ public class ListTeacherSideController implements Initializable {
     private void LogOut(ActionEvent event) throws IOException {
         Utilities.changeScene(event, this.getClass(), "Login", "Login");
     }
+
+    @FXML
+    private void addModule(ActionEvent event) throws IOException {
+          Utilities.changeScene(event, this.getClass(), "ModuleCreate", "Lag ny modul");
+        
+    }
     
 }
 

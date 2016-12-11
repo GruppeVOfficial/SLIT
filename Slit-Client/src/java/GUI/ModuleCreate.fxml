@@ -82,5 +82,6 @@
          </content>
       </ScrollPane>
       <Button fx:id="LogOut" layoutX="825.0" layoutY="36.0" mnemonicParsing="false" text="Logg ut" />
+      <Button fx:id="LogOut1" layoutX="720.0" layoutY="37.0" mnemonicParsing="false" onAction="#back" text="Tilbake" />
    </children>
 </AnchorPane>
