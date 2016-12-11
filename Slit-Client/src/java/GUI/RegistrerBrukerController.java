@@ -28,7 +28,7 @@ import javafx.scene.text.Text;
  *
  * @author Terje
  */
-public class RegisterUserController implements Initializable {
+public class RegistrerBrukerController implements Initializable {
 
     private TextArea Brukernavn;
     private TextArea Fornavn;
@@ -77,7 +77,8 @@ public class RegisterUserController implements Initializable {
      */
     
     
-        private void saveUserEventTest(ActionEvent event) {
+    @FXML
+        private void Registrer(ActionEvent event) {
         
             if (this.firstName.getText().isEmpty()){
             this.errorText.setText("En feil ha oppstått");
@@ -133,7 +134,4 @@ public class RegisterUserController implements Initializable {
         Utilities.changeScene(event, this.getClass(), "Login", "Loginn");
     }
 
-    @FXML
-    private void Registrer(ActionEvent event) {
-    }
 }
