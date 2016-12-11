@@ -19,7 +19,7 @@
             <Button layoutX="371.0" layoutY="242.0" mnemonicParsing="false" onAction="#StudentAction" prefHeight="75.0" prefWidth="150.0" text="Student" />
             <Button layoutX="371.0" layoutY="335.0" mnemonicParsing="false" onAction="#TeacherAction" prefHeight="75.0" prefWidth="150.0" text="Teacher" />
             <Text layoutX="428.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" />
-            <Button layoutX="371.0" layoutY="498.0" mnemonicParsing="false" onAction="#RegistrerBruker" prefHeight="31.0" prefWidth="150.0" text="Registrer ny bruker" />
+            <Button layoutX="371.0" layoutY="498.0" mnemonicParsing="false" onAction="#RegisterUser" prefHeight="31.0" prefWidth="150.0" text="Registrer ny bruker" />
          </children>
       </AnchorPane>
    </children>
