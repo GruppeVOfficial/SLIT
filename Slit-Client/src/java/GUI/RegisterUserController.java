@@ -71,6 +71,19 @@ public class RegisterUserController implements Initializable {
      * Does something with the userID and tries to save create new user
      * @param event 
      */
+<<<<<<< HEAD
+=======
+    @FXML
+    private void saveUserEventTest(ActionEvent event) {
+        System.out.println("start");
+        users.insertUser("004", this.Fornavn.getText(), this.Etternavn.getText(), this.Epost.getText(), this.Telefon.getText(), this.Brukernavn.getText(), this.Passord.getText());
+        this.Fornavn.setText("navn");
+        this.errorText.setText("Yaaayy");
+        
+    }
+    
+    @FXML
+>>>>>>> 241719fabedd677205701d2b9ed67f9383991ab8
     private void saveUserEvent(ActionEvent event) {
         if (this.GjentaPassord.getText().isEmpty()){
             this.errorText.setText("En feil har oppstått");
