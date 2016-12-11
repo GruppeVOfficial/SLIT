@@ -66,10 +66,10 @@ public class QueueController implements Initializable {
 
         //listProperty.set(FXCollections.observableArrayList(StudentNavn));
         try {
-            Student = user.getStudent("003");
+            Student = user.getStudent("notpoop");
             //autentiseringsmetode som hadde lagt til "this.loggedinStudent". 
             {
-                items.add(Student.firstName);
+                items.add(items.size(), Student.firstName);
             }
             StudentKøListe.setItems(items);
             //istedefor student ville vi lagt inn "thisLoggedInStudent"
@@ -82,15 +82,17 @@ public class QueueController implements Initializable {
     
     void getStudentList() {
         
-        ArrayList<QueueDataModel> students = new ArrayList();
-        ObservableList<String> data = FXCollections.observableArrayList();
+        //ArrayList<StudentDataModel> students = new ArrayList();
+        //ObservableList<String> data = FXCollections.observableArrayList();
+        ArrayList<QueueDataModel> queues = new ArrayList();
 
         try {
-            students = queueM.getAllStudents();
-            for (int i = 0; i < students.size(); i++) {
-                data.add(students.get(i).getUserid());
+            //students = user.getAllStudents();
+            queues = queueM.finneAlle();
+            for (int i = 0; i < queues.size(); i++) {
+                items.add(user.getStudent(queues.get(i).getUserid()).firstName);
             }
-            StudentKøListe.setItems(data);
+            StudentKøListe.setItems(items);
        } catch (IllegalArgumentException e) {
            e.printStackTrace();
        }
@@ -100,13 +102,15 @@ public class QueueController implements Initializable {
 @FXML
     private void ActionUpdate(ActionEvent event) 
     {
+        //skulle lagt til verdi for dato, og og sortert etter dette
         getStudentList();
-
+        System.out.println(items.size());
     }
     
     @FXML
     private void Quexit(ActionEvent event) 
     {
+        // for å vite hvem som skal fjernes må det være en login versjon
         items.remove(Student.firstName);
         //listProperty.set(FXCollections.observableArrayList(StudentNavn));
         

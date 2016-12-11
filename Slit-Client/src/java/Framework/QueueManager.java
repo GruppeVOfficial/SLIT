@@ -38,10 +38,21 @@ public class QueueManager {
         this.lookupQueueSessionBeanRemote().addQueueToBase(Student);
     }
     
+    //prøv å gjør om til String
     public QueueDataModel getModel(String id)
     {
-        this.lookupQueueSessionBeanRemote().getModel(id);
-        return null;
+        return this.lookupQueueSessionBeanRemote().getModel(id);
+    }
+    
+    public String ja(String id)
+    {
+        lookupQueueSessionBeanRemote().ja(id);
+        return id;
+    }
+    
+    public ArrayList finneAlle()
+    {
+        return this.lookupQueueSessionBeanRemote().finneAlle();
     }
     
     public ArrayList<QueueDataModel> getAllStudents() {
@@ -49,9 +60,10 @@ public class QueueManager {
         int i = 1;
         
        while (true){
-           if (getModel(correctId(i)) != null) {
-                allStudents.add(getModel(correctId(i)));
+           if (this.getModel(correctId(i)) == null) {
+                allStudents.add(this.getModel(correctId(i)));
                 i++; 
+                System.out.println(i);
            } else {
                break;
            }

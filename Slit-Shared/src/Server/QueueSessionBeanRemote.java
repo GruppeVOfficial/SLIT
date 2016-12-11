@@ -8,6 +8,7 @@ package Server;
 import DataModel.QueueDataModel;
 import javax.ejb.Remote;
 import DataModel.StudentDataModel;
+import java.util.ArrayList;
 
 
 /**
@@ -18,5 +19,7 @@ import DataModel.StudentDataModel;
 public interface QueueSessionBeanRemote {
     void addQueueToBase (StudentDataModel student);
     QueueDataModel getModel(String id);
+    String ja (String id);
+    ArrayList finneAlle();
 }
 

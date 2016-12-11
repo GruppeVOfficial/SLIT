@@ -9,17 +9,22 @@ import DataModel.QueueDataModel;
 import DataModel.StudentDataModel;
 import Database.Queue;
 import Database.Student;
+import java.util.ArrayList;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+
 /**
  *
  * @author erik
  */
+
 @Stateless
 public class QueueSessionBean implements QueueSessionBeanRemote {
+    private StudentDataModel Student;
 
     @PersistenceContext(unitName = "Slit-Server-ejbPU")
     private EntityManager em;
@@ -36,6 +41,26 @@ public class QueueSessionBean implements QueueSessionBeanRemote {
     }
     
     @Override
+    public String ja(String id)
+    {
+        Queue qu = em.find(Queue.class, id);
+        return id;
+    }
+    
+    @Override
+    public ArrayList finneAlle()
+    {
+        List<Queue> queueFind = em.createNamedQuery("Queue.findAll").getResultList();
+        ArrayList<QueueDataModel> queueDataFind = new ArrayList();
+        for (Queue queue : queueFind)
+        {
+            QueueDataModel queueModel = convertQueueEntityToQueueDataModel(queue);
+            queueDataFind.add(queueModel);
+        }
+        return queueDataFind;
+    }
+    
+    @Override
     public QueueDataModel getModel(String id){
     
         QueueDataModel queueDataModel = new QueueDataModel();
@@ -44,7 +69,8 @@ public class QueueSessionBean implements QueueSessionBeanRemote {
             
             Queue queue = em.find(Queue.class, id);
             
-            if(queue != null){
+            if(queue != null)
+            {
                 queueDataModel = this.convertQueueEntityToQueueDataModel(queue);
             }
       
@@ -55,6 +81,7 @@ public class QueueSessionBean implements QueueSessionBeanRemote {
         }
         return queueDataModel;
     }
+    
     
     public QueueDataModel convertQueueEntityToQueueDataModel(Queue queue){
     
