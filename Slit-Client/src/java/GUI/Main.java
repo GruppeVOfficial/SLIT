@@ -5,10 +5,8 @@
  */
 package GUI;
 
-//import DataModel.ModuleDataModel;
 import DataModel.StudentDataModel;
 import Framework.ModuleManager;
-//import Framework.ModuleManager;
 import Framework.TeacherManager;
 import Framework.UserManager;
 import static javafx.application.Application.launch;
@@ -28,7 +26,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception{
 
-        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Queue.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -36,10 +34,6 @@ public class Main extends Application {
     
     public static void main(String[] args) {
         
-        launch(args);
-        UserManager userManager = new UserManager(); 
-        TeacherManager teacherManager = new TeacherManager();
-        ModuleManager moduleManager = new ModuleManager();
         
         launch(args);
     }

@@ -61,7 +61,7 @@ public class QueueController implements Initializable {
 
         //listProperty.set(FXCollections.observableArrayList(StudentNavn));
         try {
-            Student = user.getStudent("004");
+            Student = user.getStudent("001");
             //autentiseringsmetode som hadde lagt til "this.loggedinStudent". 
             {
                 items.add(Student.firstName);
