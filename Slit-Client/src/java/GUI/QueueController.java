@@ -50,8 +50,8 @@ public class QueueController implements Initializable {
     
     
     
-    protected List<StudentDataModel> StudentNavn = new ArrayList<>();
-    protected ListProperty<StudentDataModel> listProperty = new SimpleListProperty<>();
+    //protected List<StudentDataModel> StudentNavn = new ArrayList<>();
+    //protected ListProperty<StudentDataModel> listProperty = new SimpleListProperty<>();
     
     
     ObservableList<String> items = FXCollections.observableArrayList();
@@ -59,9 +59,9 @@ public class QueueController implements Initializable {
     @FXML
     private void actionQueue(ActionEvent event) {
 
-        listProperty.set(FXCollections.observableArrayList(StudentNavn));
+        //listProperty.set(FXCollections.observableArrayList(StudentNavn));
         try {
-            Student = user.getStudent("002");
+            Student = user.getStudent("001");
             //autentiseringsmetode som hadde lagt til "this.loggedinStudent". 
             {
                 items.add(Student.firstName);
@@ -79,7 +79,7 @@ public class QueueController implements Initializable {
     private void Quexit(ActionEvent event) 
     {
         items.remove(Student.firstName);
-        listProperty.set(FXCollections.observableArrayList(StudentNavn));
+        //listProperty.set(FXCollections.observableArrayList(StudentNavn));
     }
     
     /**
@@ -94,7 +94,7 @@ public class QueueController implements Initializable {
     private QueueSessionBeanRemote lookupQueueSessionBeanRemote() {
         try {
             Context c = new InitialContext();
-            return (QueueSessionBeanRemote) c.lookup("java:comp/env/QueueSessionBean");
+            return (QueueSessionBeanRemote) c.lookup("java:global/Slit-Server-ejb/QueueSessionBean");
         } catch (NamingException ne) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
             throw new RuntimeException(ne);

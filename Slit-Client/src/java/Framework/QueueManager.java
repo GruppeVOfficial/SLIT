@@ -24,7 +24,7 @@ public class QueueManager {
     private QueueSessionBeanRemote lookupQueueSessionBeanRemote() {
         try {
             Context c = new InitialContext();
-            return (QueueSessionBeanRemote) c.lookup("java:comp/env/QueueSessionBean");
+            return (QueueSessionBeanRemote) c.lookup("java:global/Slit-Server-ejb/QueueSessionBean");
         } catch (NamingException ne) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
             throw new RuntimeException(ne);
