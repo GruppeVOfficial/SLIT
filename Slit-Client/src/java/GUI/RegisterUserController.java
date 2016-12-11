@@ -73,17 +73,7 @@ public class RegisterUserController implements Initializable {
      * @param event 
 <<<<<<< HEAD
      */
-
-=======
-     
->>>>>>> a645fc3b3ed10fb22f4a9a5034cb853e2c55af4f
-    @FXML
-    private void saveUserEventTest(ActionEvent event) {
-        users.insertUser("004", this.Fornavn.getText(), this.Etternavn.getText(), this.Epost.getText(), this.Telefon.getText(), this.Brukernavn.getText(), this.Passord.getText());
-        this.errorText.setText("Yaaayy");
-        
-    }
-    * */
+    
     
         private void saveUserEventTest(ActionEvent event) {
         
@@ -101,10 +91,7 @@ public class RegisterUserController implements Initializable {
         }   
     }
     
-<<<<<<< HEAD
     @FXML
-=======
->>>>>>> a645fc3b3ed10fb22f4a9a5034cb853e2c55af4f
     private void saveUserEvent(ActionEvent event) {
         if (this.GjentaPassord.getText().isEmpty()){
             this.errorText.setText("En feil har oppstått");
