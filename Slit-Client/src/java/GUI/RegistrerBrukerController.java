@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
@@ -21,7 +22,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
@@ -80,18 +80,18 @@ public class RegistrerBrukerController implements Initializable {
     @FXML
         private void Registrer(ActionEvent event) {
         
+            System.out.println("nytt forsøk");
             if (this.firstName.getText().isEmpty()){
-            this.errorText.setText("En feil ha oppstått");
-        }
-        
-        if (this.firstName.getText() != null){
-            this.errorText.setText("Studenten er lagt til.");
-            users.insertUser(studentID.getText(), firstName.getText(), lastName.getText(), eMail.getText(), phone.getText(), userName.getText(), password.getText()); 
-           }
-        else{
-            Debug.PrintError("Noe gikk galt");
-
-        }   
+            this.errorText.setText("feil 1 firstname tom");
+            } 
+            else if (this.password.getText().isEmpty()) {
+                this.errorText.setText("feil 2 passord tom");
+            }
+            else {
+                this.errorText.setText("Nytt forsøk");
+                users.insertUser(studentID.getText(), firstName.getText(), lastName.getText(), eMail.getText(), phone.getText(), userName.getText(), password.getText()); 
+                this.errorText.setText("Studenten er lagt til.");
+            }  
     }
     
     private void saveUserEvent(ActionEvent event) {
