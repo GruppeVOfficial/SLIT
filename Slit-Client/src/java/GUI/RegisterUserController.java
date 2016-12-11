@@ -18,6 +18,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 /**
@@ -27,30 +28,37 @@ import javafx.scene.text.Text;
  */
 public class RegisterUserController implements Initializable {
 
-    @FXML
-    private Text SLITLabel;
-    @FXML
     private TextArea Brukernavn;
-    @FXML
     private TextArea Fornavn;
-    @FXML
     private TextArea Etternavn;
-    @FXML
     private TextArea Epost;
-    @FXML
     private TextArea Telefon;
-    @FXML
     private TextArea Passord;
-    @FXML
     private TextArea GjentaPassord;
-    @FXML
-    private Button AvbrytBtn;
-    @FXML
-    private Button RegistrerBtn;
     UserManager users = new UserManager();
     
     @FXML
     private Label errorText;
+    @FXML
+    private TextField eMail;
+    @FXML
+    private TextField lastName;
+    @FXML
+    private TextField firstName;
+    @FXML
+    private TextField userName;
+    @FXML
+    private TextField phone;
+    @FXML
+    private TextField password;
+    @FXML
+    private TextField passwordRepeat;
+    @FXML
+    private Button reg;
+    @FXML
+    private Button Avbryt;
+    @FXML
+    private TextField studentID;
     
     /**
      * Initializes the controller class.
@@ -63,17 +71,32 @@ public class RegisterUserController implements Initializable {
      * This is probably garbage!
      * Does something with the userID and tries to save create new user
      * @param event 
-     */
+     
     @FXML
     private void saveUserEventTest(ActionEvent event) {
-        System.out.println("start");
         users.insertUser("004", this.Fornavn.getText(), this.Etternavn.getText(), this.Epost.getText(), this.Telefon.getText(), this.Brukernavn.getText(), this.Passord.getText());
-        this.Fornavn.setText("navn");
         this.errorText.setText("Yaaayy");
         
     }
+    * */
     
     @FXML
+        private void saveUserEventTest(ActionEvent event) {
+        
+            if (this.firstName.getText().isEmpty()){
+            this.errorText.setText("En feil ha oppstått");
+        }
+        
+        if (this.firstName.getText() != null){
+            this.errorText.setText("Studenten er lagt til.");
+            users.insertUser(studentID.getText(), firstName.getText(), lastName.getText(), eMail.getText(), phone.getText(), userName.getText(), password.getText()); 
+           }
+        else{
+            Debug.PrintError("Noe gikk galt");
+
+        }   
+    }
+    
     private void saveUserEvent(ActionEvent event) {
         if (this.GjentaPassord.getText().isEmpty()){
             this.errorText.setText("En feil har oppstått");
