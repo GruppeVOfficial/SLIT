@@ -76,16 +76,18 @@ public class RegistrerBrukerController implements Initializable {
 <<<<<<< HEAD
      */
     
-    
+    /**
+     * Checks that user input is correct and sends input to UserManager. 
+     * This stores user information in database.
+     * @param event 
+     */
     @FXML
         private void Registrer(ActionEvent event) {
-        
-            System.out.println("nytt forsøk");
-            if (this.firstName.getText().isEmpty()){
-            this.errorText.setText("feil 1 firstname tom");
-            } 
-            else if (this.password.getText().isEmpty()) {
-                this.errorText.setText("feil 2 passord tom");
+            if (this.userName.getText().isEmpty() || this.firstName.getText().isEmpty() || this.lastName.getText().isEmpty() || this.phone.getText().isEmpty() || this.eMail.getText().isEmpty() || this.password.getText().isEmpty()) {
+            this.errorText.setText("Feil: Fyll inn alle felter i skjemaet");
+            }
+            else if (!this.password.getText().equals(this.passwordRepeat.getText())) {
+                this.errorText.setText("feil: gjenta passord stemmer ikke.");
             }
             else {
                 this.errorText.setText("Nytt forsøk");
@@ -93,28 +95,7 @@ public class RegistrerBrukerController implements Initializable {
                 this.errorText.setText("Studenten er lagt til.");
             }  
     }
-    
-    private void saveUserEvent(ActionEvent event) {
-        if (this.GjentaPassord.getText().isEmpty()){
-            this.errorText.setText("En feil har oppstått");
-        }
         
-        if (this.Passord.getText().equals(this.GjentaPassord.getText())) { 
-            UserManager usermanager = new UserManager();
-            ArrayList<StudentDataModel> studentList = new ArrayList();
-            studentList = usermanager.getAllStudents();
-            String i = studentList.get(studentList.size()).getUserid();
-            //String newStudentid = correctId(i);
-            users.insertUser(i, this.Fornavn.getText(), this.Etternavn.getText(), this.Epost.getText(), this.Telefon.getText(), this.Brukernavn.getText(), this.Passord.getText());
-            this.errorText.setText("Bruker lagt til");
-        }
-        else {
-            Debug.PrintError("Noe gikk galt");
-        }
-        
-    }
-
-    
     private String correctId(int i) {
         String s;
 
