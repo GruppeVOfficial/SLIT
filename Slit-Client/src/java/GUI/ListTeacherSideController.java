@@ -66,6 +66,13 @@ public class ListTeacherSideController implements Initializable {
     }
     
     @FXML
+    private void showQueue(ActionEvent event) throws IOException {
+        queueBtn.getScene().setCursor(Cursor.WAIT);
+        Utilities.createPopup(event, this.getClass(), "Queue", "Køliste");
+        queueBtn.getScene().setCursor(Cursor.DEFAULT);
+    }
+    
+    @FXML
     private void goToRedigerModuler(ActionEvent event) throws IOException {
         Utilities.changeScene(event, this.getClass(), "RedigerModul", "Rediger Modul");
     }
