@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public interface QueueSessionBeanRemote {
     void addQueueToBase (StudentDataModel student);
     QueueDataModel getModel(String id);
-    String ja (String id);
     ArrayList finneAlle();
+    void removeFromQueue(String id);
 }
 

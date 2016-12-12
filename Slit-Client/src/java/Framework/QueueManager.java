@@ -37,17 +37,17 @@ public class QueueManager {
         this.lookupQueueSessionBeanRemote().addQueueToBase(Student);
     }
     
+    public void removeFromQueue(String id)
+    {
+        this.lookupQueueSessionBeanRemote().removeFromQueue(id);
+    }
+    
     //prøv å gjør om til String
     public QueueDataModel getModel(String id)
     {
         return this.lookupQueueSessionBeanRemote().getModel(id);
     }
     
-    public String ja(String id)
-    {
-        lookupQueueSessionBeanRemote().ja(id);
-        return id;
-    }
     
     public ArrayList finneAlle()
     {

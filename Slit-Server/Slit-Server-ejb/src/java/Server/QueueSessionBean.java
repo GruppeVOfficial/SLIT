@@ -38,11 +38,12 @@ public class QueueSessionBean implements QueueSessionBeanRemote {
     }
     
     @Override
-    public String ja(String id)
+    public void removeFromQueue(String id)
     {
-        Queue qu = em.find(Queue.class, id);
-        return id;
+        Queue queue = em.find(Queue.class, id);
+        em.remove(queue);
     }
+    
     
     @Override
     public ArrayList finneAlle()
@@ -57,6 +58,7 @@ public class QueueSessionBean implements QueueSessionBeanRemote {
         return queueDataFind;
     }
     
+    //brukes vel ikke? eller jo kanskje. den brukes nok ja
     @Override
     public QueueDataModel getModel(String id){
     

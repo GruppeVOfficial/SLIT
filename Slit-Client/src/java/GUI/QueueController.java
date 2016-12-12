@@ -49,7 +49,7 @@ public class QueueController implements Initializable {
     private void actionQueue(ActionEvent event) {
 
         try {
-            Student = user.getStudent("notpoop");
+            Student = user.getStudent("001");
             //autentiseringsmetode som hadde lagt til "this.loggedinStudent". 
             {
                 items.add(items.size(), Student.firstName);
@@ -84,14 +84,13 @@ public class QueueController implements Initializable {
     {
         //skulle lagt til verdi for dato, og og sortert etter dette
         getStudentList();
-        System.out.println(items.size());
     }
     
     @FXML
     private void Quexit(ActionEvent event) 
     {
         // for å vite hvem som skal fjernes må det være en login versjon
-        items.remove(Student.firstName);   
+        queueM.removeFromQueue("001");
     }
     
     /**
@@ -100,7 +99,7 @@ public class QueueController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        
+        getStudentList();
     }       
         
     }    
