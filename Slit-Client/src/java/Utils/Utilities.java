@@ -60,6 +60,14 @@ public class Utilities {
         
     }
     
+    /***
+     * Used to create a new popup in the current scene
+     * @param event Pass on the event from the button pressed
+     * @param c Pass on the class that the event fired from ("this.getClass()")
+     * @param loadName The name of the .fxml file to be loaded in the popup.
+     * @param title The title of the new window
+     * @throws IOException 
+     */
     public static void createPopup(ActionEvent event, Class c, String loadName, String title) throws IOException {
         Parent parent = FXMLLoader.load(c.getResource(loadName + ".fxml"));
         Scene testScene = new Scene(parent);
@@ -67,7 +75,7 @@ public class Utilities {
         Stage stage = new Stage();
         stage.setScene(testScene);
         stage.setTitle(title);
-        stage.initModality(Modality.WINDOW_MODAL);
+        stage.initModality(Modality.APPLICATION_MODAL);
         stage.initOwner(((Node) event.getSource()).getScene().getWindow());
         stage.showAndWait();
             

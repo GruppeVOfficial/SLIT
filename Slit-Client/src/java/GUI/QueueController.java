@@ -66,7 +66,8 @@ public class QueueController implements Initializable {
     void getStudentList() {
         
         ArrayList<QueueDataModel> queues = new ArrayList();
-
+        items.removeAll(items);
+        
         try {
             queues = queueM.finneAlle();
             for (int i = 0; i < queues.size(); i++) {
