@@ -87,5 +87,6 @@
       <Button layoutX="452.0" layoutY="46.0" mnemonicParsing="false" onAction="#getModule4" text="Modul 4" />
       <Button layoutX="532.0" layoutY="46.0" mnemonicParsing="false" onAction="#getModule5" text="Modul 5" />
       <Button layoutX="824.0" layoutY="46.0" mnemonicParsing="false" onAction="#LogOut" text="Logg ut" />
+      <Button layoutX="734.0" layoutY="46.0" mnemonicParsing="false" onAction="#back" text="Tilbake" />
    </children>
 </AnchorPane>

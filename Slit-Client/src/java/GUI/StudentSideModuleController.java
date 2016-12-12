@@ -63,14 +63,14 @@ public class StudentSideModuleController implements Initializable {
     @FXML
     private void module1btn(ActionEvent event) { 
         module1btn.getScene().setCursor(Cursor.WAIT);
-        UpdateModule("1");
+        UpdateModule("001");
         module1btn.getScene().setCursor(Cursor.DEFAULT);
     }
     
     @FXML
     private void module2btn(ActionEvent event) { 
         module1btn.getScene().setCursor(Cursor.WAIT);
-        UpdateModule("020");
+        UpdateModule("002");
         module1btn.getScene().setCursor(Cursor.DEFAULT);
     }
     

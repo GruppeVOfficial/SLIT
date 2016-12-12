@@ -26,6 +26,7 @@ public class ModuleSessionBean implements ModuleSessionBeanRemote {
         em.persist(object);
     }
     
+    @Override
     public void removeModule(String Id){
         Module module = em.find(Module.class, Id);
         em.remove(module);
