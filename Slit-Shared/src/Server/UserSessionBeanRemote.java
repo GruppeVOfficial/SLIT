@@ -6,6 +6,7 @@
 package Server;
 
 import DataModel.StudentDataModel;
+import java.util.ArrayList;
 import javax.ejb.Remote;
 
 /**
@@ -19,6 +20,8 @@ public interface UserSessionBeanRemote {
     void insertUser(String userid, String firstName, String lastName, String email, String phoneNumber, String username, String password); 
     
     StudentDataModel getStudent(String id);
+    
+    ArrayList getAllStudents();
     
     void saveStudentDataModel(StudentDataModel studentDataModel);
     
