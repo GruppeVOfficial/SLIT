@@ -43,36 +43,15 @@ public class UserManager {
     }
     
     /***
-     * TODO: THIS IS FUCKING GARBAGE, BUT IT WORKS!
-     * CONSIDER CONVERTING STUDENT ID TO INT IN DB
-     * 
      * Get a list of all students in the database.
      * 
      * @return ArrayList(StudentDataModel) students
      */
     public ArrayList<StudentDataModel> getAllStudents() {
-        ArrayList<StudentDataModel> allStudents = new ArrayList();
-        int i = 1;
-        
-       while (true){
-           if (getStudent(correctId(i)).getFirstName() != null) {
-                allStudents.add(getStudent(correctId(i)));
-                i++; 
-           } else {
-               break;
-           }
-            
-        }
-
-        return allStudents;
+        return this.lookupUserSessionBeanRemote().getAllStudents();
     }
     
     /**
-     * TODO: THIS IS FUCKING GARBAGE! CONSIDER CONVERTING STUDENT ID TO INT IN DB
-     * 
-     * Converts an integer i into string with the format "00i"
-     * for accessing the database id correctly. Goes up to 3 integers ("999")
-     * 
      * @param i Integer to be converted to correct string
      * @return String with correct format for DB
      */

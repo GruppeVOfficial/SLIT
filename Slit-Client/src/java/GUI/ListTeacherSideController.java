@@ -81,14 +81,13 @@ public class ListTeacherSideController implements Initializable {
             StudentListeBtn.getScene().setCursor(Cursor.WAIT);
             students = user.getAllStudents();
             for (int i = 0; i < students.size(); i++) {
-                data.add(students.get(i).firstName);
+                data.add(students.get(i).getFirstName());
             }
             listView.setItems(data);
+            
        } catch (IllegalArgumentException e) {
            e.printStackTrace();
        }
-        
-        
         
         StudentListeBtn.getScene().setCursor(Cursor.DEFAULT);
     }
