@@ -5,8 +5,12 @@
  */
 package Server;
 
+import DataModel.QueueDataModel;
 import DataModel.StudentDataModel;
-import Database.Student;;
+import Database.Queue;
+import Database.Student;import java.util.ArrayList;
+import java.util.List;
+;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -65,6 +69,19 @@ public class UserSessionBean implements UserSessionBeanRemote {
         return studentDataModel;
         
         
+    }
+    
+    @Override
+    public ArrayList getAllStudents()
+    {
+        List<Student> studentFind = em.createNamedQuery("Student.findAll").getResultList();
+        ArrayList<StudentDataModel> studentDataFind = new ArrayList();
+        for (Student student : studentFind)
+        {
+            StudentDataModel studentModel = convertStudentEntityToStudentDataModel(student);
+            studentDataFind.add(studentModel);
+        }
+        return studentDataFind;
     }
     
     public StudentDataModel convertStudentEntityToStudentDataModel(Student student){

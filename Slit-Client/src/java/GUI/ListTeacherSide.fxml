@@ -32,7 +32,7 @@
       <Button fx:id="redigerModuler" layoutX="646.0" layoutY="26.0" mnemonicParsing="false" onAction="#goToRedigerModuler" text="Rediger moduler" />
       <Button fx:id="StudentListeBtn" layoutX="82.0" layoutY="72.0" mnemonicParsing="false" onAction="#showStudentList" text="Oppdater" />
 
-      <Button fx:id="queueBtn" layoutX="201.0" layoutY="72.0" mnemonicParsing="false" text="Kø" />
+      <Button fx:id="queueBtn" layoutX="201.0" layoutY="72.0" mnemonicParsing="false" onAction="#showQueue" text="Kø" />
       <Label fx:id="btnTestLabel" layoutX="257.0" layoutY="77.0" prefHeight="17.0" prefWidth="196.0" />
       <Button layoutX="514.0" layoutY="26.0" mnemonicParsing="false" onAction="#addModule" text="Legg til moduler" />
     </children>

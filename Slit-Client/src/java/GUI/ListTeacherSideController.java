@@ -66,6 +66,13 @@ public class ListTeacherSideController implements Initializable {
     }
     
     @FXML
+    private void showQueue(ActionEvent event) throws IOException {
+        queueBtn.getScene().setCursor(Cursor.WAIT);
+        Utilities.createPopup(event, this.getClass(), "Queue", "Køliste");
+        queueBtn.getScene().setCursor(Cursor.DEFAULT);
+    }
+    
+    @FXML
     private void goToRedigerModuler(ActionEvent event) throws IOException {
         Utilities.changeScene(event, this.getClass(), "RedigerModul", "Rediger Modul");
     }
@@ -81,14 +88,13 @@ public class ListTeacherSideController implements Initializable {
             StudentListeBtn.getScene().setCursor(Cursor.WAIT);
             students = user.getAllStudents();
             for (int i = 0; i < students.size(); i++) {
-                data.add(students.get(i).firstName);
+                data.add(students.get(i).getFirstName());
             }
             listView.setItems(data);
+            
        } catch (IllegalArgumentException e) {
            e.printStackTrace();
        }
-        
-        
         
         StudentListeBtn.getScene().setCursor(Cursor.DEFAULT);
     }
