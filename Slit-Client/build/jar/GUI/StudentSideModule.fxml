@@ -20,7 +20,7 @@
                   <Button layoutX="25.0" layoutY="14.0" mnemonicParsing="false" text="Button" />
                </children>
             </AnchorPane>
-            <Button fx:id="queuebtn" layoutX="836.0" layoutY="64.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="125.0" text="KØ" />
+            <Button fx:id="queueBtn" layoutX="836.0" layoutY="64.0" mnemonicParsing="false" onAction="#showQueue" prefHeight="31.0" prefWidth="125.0" text="KØ" />
             <TextArea fx:id="moduleText" layoutX="240.0" layoutY="110.0" prefHeight="554.0" prefWidth="721.0" text="BLUEJ, Klasser og Objekter&#10;&#10;----&#10;&#10;Ressurser&#10;&#10;----&#10;&#10;Oppgave&#10;&#10;----&#10;&#10;Godkjenning&#10;&#10;----" />
             <Text layoutX="14.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SLIT" textAlignment="CENTER" wrappingWidth="178.6708984375" AnchorPane.bottomAnchor="598.451171875" AnchorPane.leftAnchor="14.0">
                <font>

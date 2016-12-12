@@ -41,8 +41,6 @@ public class StudentSideModuleController implements Initializable {
     @FXML
     private Button module5btn;
     @FXML
-    private Button queuebtn;
-    @FXML
     private TextArea moduleText;
     @FXML
     private Button loggOutbtn;
@@ -51,6 +49,8 @@ public class StudentSideModuleController implements Initializable {
     
     ModuleManager modules = new ModuleManager();
     ModuleDataModel currentModule;
+    @FXML
+    private Button queueBtn;
     
     /**
      * Initializes the controller class.
@@ -120,5 +120,13 @@ public class StudentSideModuleController implements Initializable {
         Utilities.changeScene(event, this.getClass(), "Login", "Login");
     }
 
+    @FXML
+    private void showQueue(ActionEvent event) throws Exception {
+        queueBtn.getScene().setCursor(Cursor.WAIT);
+        Utilities.createPopup(event, this.getClass(), "Queue", "Køliste");
+        queueBtn.getScene().setCursor(Cursor.DEFAULT);
+    }
+    }
+
     
-}
+
