@@ -116,7 +116,7 @@ public class StudentSideModuleController implements Initializable {
     }
 
     @FXML
-    private void LogOut(ActionEvent event) throws IOException {
+    private void LogOut(ActionEvent event) throws Exception {
         Utilities.changeScene(event, this.getClass(), "Login", "Login");
     }
 

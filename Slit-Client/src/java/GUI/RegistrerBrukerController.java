@@ -111,7 +111,7 @@ public class RegistrerBrukerController implements Initializable {
 
 
     @FXML
-    private void Avbryt(ActionEvent event) throws IOException {
+    private void Avbryt(ActionEvent event) throws Exception {
         Utilities.changeScene(event, this.getClass(), "Login", "Loginn");
     }
 
