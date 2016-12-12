@@ -37,6 +37,6 @@
       <TextField fx:id="passwordRepeat" layoutX="47.0" layoutY="495.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="234.0" />
       <Button fx:id="Avbryt" layoutX="132.0" layoutY="535.0" mnemonicParsing="false" onAction="#Avbryt" text="Avbryt" />
       <Button fx:id="reg" layoutX="210.0" layoutY="535.0" mnemonicParsing="false" onAction="#Registrer" text="Registrer" />
-      <Label fx:id="errorText" layoutX="307.0" layoutY="466.0" prefHeight="86.0" prefWidth="329.0" text="stuff" />
+      <Label fx:id="errorText" layoutX="324.0" layoutY="466.0" prefHeight="86.0" prefWidth="329.0" />
    </children>
 </AnchorPane>
