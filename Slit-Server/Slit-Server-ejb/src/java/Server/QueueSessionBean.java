@@ -58,7 +58,6 @@ public class QueueSessionBean implements QueueSessionBeanRemote {
         return queueDataFind;
     }
     
-    //brukes vel ikke? eller jo kanskje. den brukes nok ja
     @Override
     public QueueDataModel getModel(String id){
     
