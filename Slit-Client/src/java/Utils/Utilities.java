@@ -5,15 +5,13 @@
  */
 package Utils;
 
-import GUI.Main;
+
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -49,7 +47,7 @@ public class Utilities {
      * @param title The title of the new window
      * @throws IOException 
      */
-    public static void changeScene(ActionEvent event, Class c, String loadName, String title) throws IOException {
+    public static void changeScene(ActionEvent event, Class c, String loadName, String title) throws Exception {
         Parent parent = FXMLLoader.load(c.getResource(loadName + ".fxml"));
         Scene testScene = new Scene(parent);
         
@@ -68,7 +66,7 @@ public class Utilities {
      * @param title The title of the new window
      * @throws IOException 
      */
-    public static void createPopup(ActionEvent event, Class c, String loadName, String title) throws IOException {
+    public static void createPopup(ActionEvent event, Class c, String loadName, String title) throws Exception {
         Parent parent = FXMLLoader.load(c.getResource(loadName + ".fxml"));
         Scene testScene = new Scene(parent);
         
@@ -77,7 +75,7 @@ public class Utilities {
         stage.setTitle(title);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initOwner(((Node) event.getSource()).getScene().getWindow());
-        stage.showAndWait();
+        stage.show();
             
 
         

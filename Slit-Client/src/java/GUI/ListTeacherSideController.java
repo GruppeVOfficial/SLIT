@@ -66,14 +66,14 @@ public class ListTeacherSideController implements Initializable {
     }
     
     @FXML
-    private void showQueue(ActionEvent event) throws IOException {
+    private void showQueue(ActionEvent event) throws Exception {
         queueBtn.getScene().setCursor(Cursor.WAIT);
         Utilities.createPopup(event, this.getClass(), "Queue", "Køliste");
         queueBtn.getScene().setCursor(Cursor.DEFAULT);
     }
     
     @FXML
-    private void goToRedigerModuler(ActionEvent event) throws IOException {
+    private void goToRedigerModuler(ActionEvent event) throws Exception {
         Utilities.changeScene(event, this.getClass(), "RedigerModul", "Rediger Modul");
     }
     
@@ -100,12 +100,12 @@ public class ListTeacherSideController implements Initializable {
     }
 
     @FXML
-    private void LogOut(ActionEvent event) throws IOException {
+    private void LogOut(ActionEvent event) throws Exception {
         Utilities.changeScene(event, this.getClass(), "Login", "Login");
     }
 
     @FXML
-    private void addModule(ActionEvent event) throws IOException {
+    private void addModule(ActionEvent event) throws Exception {
           Utilities.changeScene(event, this.getClass(), "ModuleCreate", "Lag ny modul");
         
     }

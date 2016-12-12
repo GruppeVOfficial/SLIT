@@ -29,17 +29,17 @@ public class LoginController implements Initializable {
     }    
 
     @FXML
-    private void StudentAction(ActionEvent event) throws IOException {
+    private void StudentAction(ActionEvent event) throws Exception {
         Utilities.changeScene(event, this.getClass(), "StudentSideModule", "ModulListe");
     }
 
     @FXML
-    private void TeacherAction(ActionEvent event) throws IOException {
+    private void TeacherAction(ActionEvent event) throws Exception {
         Utilities.changeScene(event, this.getClass(), "ListTeacherSide", "StudentListe");
     }
 
     @FXML
-    private void RegisterUser(ActionEvent event) throws IOException {
+    private void RegisterUser(ActionEvent event) throws Exception {
         Utilities.changeScene(event, this.getClass(), "RegistrerBruker", "RegistrerBruker");
     }
 
