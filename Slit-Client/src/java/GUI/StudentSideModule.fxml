@@ -12,9 +12,9 @@
          <children>
             <Button fx:id="module1btn" layoutX="14.0" layoutY="110.0" mnemonicParsing="false" onAction="#module1btn" prefHeight="31.0" prefWidth="152.0" text="Module 1" />
             <Button fx:id="module2btn" layoutX="14.0" layoutY="149.0" mnemonicParsing="false" onAction="#module2btn" prefHeight="31.0" prefWidth="152.0" text="Module 2" />
-            <Button fx:id="module3btn" layoutX="14.0" layoutY="189.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="152.0" text="Module 3" />
-            <Button fx:id="modul4btn" layoutX="14.0" layoutY="231.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="152.0" text="Module 4" />
-            <Button fx:id="module5btn" layoutX="14.0" layoutY="274.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="152.0" text="Module 5" />
+            <Button fx:id="module3btn" layoutX="14.0" layoutY="189.0" mnemonicParsing="false" onAction="#module3btn" prefHeight="31.0" prefWidth="152.0" text="Module 3" />
+            <Button fx:id="modul4btn" layoutX="14.0" layoutY="231.0" mnemonicParsing="false" onAction="#module4btn" prefHeight="31.0" prefWidth="152.0" text="Module 4" />
+            <Button fx:id="module5btn" layoutX="14.0" layoutY="274.0" mnemonicParsing="false" onAction="#module5btn" prefHeight="31.0" prefWidth="152.0" text="Module 5" />
           <AnchorPane layoutX="65.0" layoutY="-127.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <Button layoutX="25.0" layoutY="14.0" mnemonicParsing="false" text="Button" />

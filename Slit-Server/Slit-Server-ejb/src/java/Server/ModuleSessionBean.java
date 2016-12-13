@@ -25,14 +25,17 @@ public class ModuleSessionBean implements ModuleSessionBeanRemote {
     public void persist(Object object) {
         em.persist(object);
     }
-    
+    /**
+     * Takes a parameter and finds the module, then deletes it from the database 
+     * @param Id 
+     */
     @Override
     public void removeModule(String Id){
         Module module = em.find(Module.class, Id);
         em.remove(module);
     }
     /**
-     * Takes parameters so create a module object and persists it. 
+     * Takes parameters to create a module object and persists it. 
      * @param moduleID
      * @param modulename
      * @param requierments

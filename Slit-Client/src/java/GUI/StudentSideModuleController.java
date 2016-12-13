@@ -73,6 +73,29 @@ public class StudentSideModuleController implements Initializable {
         UpdateModule("002");
         module1btn.getScene().setCursor(Cursor.DEFAULT);
     }
+    @FXML
+    private void module3btn(ActionEvent event) {
+        module1btn.getScene().setCursor(Cursor.WAIT);
+        UpdateModule("003");
+        module1btn.getScene().setCursor(Cursor.DEFAULT);
+    }
+   
+   
+    @FXML
+    private void module4btn(ActionEvent event) {
+        module1btn.getScene().setCursor(Cursor.WAIT);
+        UpdateModule("004");
+        module1btn.getScene().setCursor(Cursor.DEFAULT);
+    }
+   
+    @FXML
+    private void module5btn(ActionEvent event) {
+        module1btn.getScene().setCursor(Cursor.WAIT);
+        UpdateModule("005");
+        module1btn.getScene().setCursor(Cursor.DEFAULT);
+    }
+   
+
     
     
     void setCurrentModule(String moduleID) {
@@ -126,6 +149,7 @@ public class StudentSideModuleController implements Initializable {
         Utilities.createPopup(event, this.getClass(), "Queue", "Køliste");
         queueBtn.getScene().setCursor(Cursor.DEFAULT);
     }
+
     }
 
     

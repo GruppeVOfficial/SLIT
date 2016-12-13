@@ -82,7 +82,7 @@ public class ModuleCreateController implements Initializable {
     }
 
     @FXML
-    private void back(ActionEvent event) throws IOException {
+    private void back(ActionEvent event) throws Exception {
             Utilities.changeScene(event, this.getClass(), "ListTeacherSide", "HovedSide");
 
     }
